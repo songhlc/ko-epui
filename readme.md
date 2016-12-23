@@ -1,4 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/ko-epui.svg)](https://www.npmjs.com/package/ko-epui)
+[![license](https://img.shields.io/npm/l/ko-epui.svg)](https://www.npmjs.com/package/ko-epui)
 # ko-epui
 - 基于knockoutjs 和 [kero](http://tinper.org/dist/kero/index.html) 封装的UI组件
 
