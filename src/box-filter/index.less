@@ -1,0 +1,45 @@
+.box-filter {
+  padding: 9px 20px 9px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: #FFF;
+  min-height: 48px;
+  .box-filter-title {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 32px;
+    margin-right: 20px;
+    color: #333333;
+  }
+  .form-search {
+    width: 200px;
+    height: 34px;
+    position: relative;
+    .input_search {
+      padding-right: 34px;
+      transition: all .5s;
+      border-radius: 0;
+    }
+    .u-input-group-btn {
+      position: absolute;
+      right: 10px;
+      top: 1px;
+      height: 32px;
+      display: block;
+      width: 30px;
+      overflow: hidden;
+      color: #cecece;
+      z-index: 10;
+      border: none;;
+      .btn {
+        background: transparent !important;
+      }
+      i{
+        color:#cecece;
+      }
+    }
+    &input:focus+.u-input-group-btn>.btn {
+      color: #189CC7 !important;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="box-filter">
+  <div class="pull-left box-filter-title">
+    <span data-bind="text:title"></span>
+  </div>
+  <!-- ko template: { nodes: $componentTemplateNodes } --><!-- /ko -->
+  <!-- ko if: qhidden -->
+  <div class="pull-right">
+    <form class="form-search u-input-group" action="#">
+      <input type="text" class="u-form-control input_search" name="search_LIKE_productName" data-bind="text:q,attr:{placeholder:placeholder}">
+				<span class="u-input-group-btn">
+            <button type="button" class="btn btn-white no-btn-outline " data-bind="click: query">
+              <i class="fa fa-search"></i>
+            </button>
+				</span>
+    </form>
+  </div>
+  <!-- /ko -->
+</div>

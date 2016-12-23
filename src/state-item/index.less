@@ -1,0 +1,23 @@
+.state-item{
+  display: inline-block;
+  .item-title{
+    position: relative;
+    margin-bottom: 0;
+  }
+  .item-count{
+
+  }
+  label{
+    cursor: pointer;
+  }
+  label::after {
+    background-color: #F4786B;
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  label.active{
+    opacity: 1;
+    transform: scaleX(1);
+    border-bottom: solid #F4786B 1px;
+  }
+}
