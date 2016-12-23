@@ -1,4 +1,58 @@
-### how 2 use
+# ko-epui
+- 基于knockoutjs 和 [kero](http://tinper.org/dist/kero/index.html) 封装的UI组件
+## 目录
+- 1.介绍
+- 2.安装
+- 3.使用
+- 4.组件列表
+- 5.多页面应用脚手架
+
+
+## 1.介绍
+
+ko-epui(knockout/kero base enterprise ui component) 基于knockout组件 和 [kero](http://tinper.org/dist/kero/index.html)封装的ui组件。依赖于knockout 和kero
+
+- 更优雅的自定义标签写法,更好的语义化
+```
+date日期组件
+<u-datepicker params='...'>
+</u-datepicker>
+```
+- 无缝集成kero u-meta api，简化多余重复dom
+```
+//老的方式：
+<div u-meta='{"id":"r1","type":"u-radio","data":"dt1","field":"f1","datasource":"radiodata","hasOther":true}'>
+    <label  class="u-radio" >
+        <input type="radio" class="u-radio-button" name="options">
+        <span class="u-radio-label"></span>
+    </label>
+</div>
+
+//新的方式：
+<u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
+</u-radio>
+```
+
+- 新增各类box容器组件
+```
+<box>
+  <box-filter></box-filter>
+  <box-tabs></box-tabs>
+  <box-content></box-content>
+</box>
+```
+
+- 更好的UI设计,用友网络互联网研发中心UE出品
+[demo](https://www.yonyouyc.com/)
+
+- 用友网络友云采产品部最佳实践出品
+
+## 2.安装
+```
+npm install ko-epui
+```
+
+### 3.如何使用
 
 ```
 import 'ko-epui/dist/ko-epui.css'
@@ -6,50 +60,13 @@ import 'ko-epui'
 
 ```
 
-### use in html file
+#### 3.1 html file
 ```
-<box>
-    <breadcrumb></breadcrumb>
-    <box-filter params="title:'${__('edit_title')}'">
-      <div class="pull-right">
-        <button class="btn btn-primary btn-sm  m-r-sm" data-bind="click:$root.save2"><span class="fa fa-save"></span>&nbsp;保存</button>
-        <a href="../list/index.${__('locale')}.html" class="btn btn-outline btn-sm m-r-sm"><span class="fa fa-reply"></span>&nbsp;返回</a>
-      </div>
-    </box-filter>
+<box》
     <box-content params="title: $root.title">
-      <div class="u-row">
-        <div class="u-form-group">
-          <label class="u-col-2 u-form-group-sm u-form-label text-right">
-            ${__('title')}
-          </label>
-          <div class="u-col-3">
-            <input type="text" class="u-form-control" data-bind="value:$root.model.ref('defProjectPsnName')" placeholder="input me">
-          </div>
-          <label class="u-col-2 u-form-group-sm u-form-label text-right">
-            ${__('title')}
-          </label>
-          <div class="u-col-3">
-            <input type="text" class="u-form-control" placeholder="input me" data-bind="value: $root.model.ref('defProjectPsnTel')">
-          </div>
-        </div>
-        <div class="u-form-group">
-          <label class="u-col-2 u-form-group-sm u-form-label text-right">
-            ${__('title')}
-          </label>
-          <div class="u-col-3">
-            <input type="text" class="u-form-control" placeholder="input me">
-          </div>
-          <label class="u-col-2 u-form-group-sm u-form-label text-right">
-            ${__('title')}
-          </label>
-          <div class="u-col-3">
-            <input type="text" class="u-form-control" placeholder="input me">
-          </div>
-        </div>
-      </div>
+      title
     </box-content>
     <box-content params="title: '表格显示'">
-      <u-grid params="config: $root.detail_grid"></u-grid>
     </box-content>
     <box-content params="title: $root.thirdtitle, model: $root.model">
       <div class="u-row">
@@ -72,32 +89,6 @@ import 'ko-epui'
             <u-switch params='data:{model:$root.model},umeta:{"data":"model","field":"isCtrlOpen"}'>
             </u-switch>
           </div>
-        </div>
-        <div class="u-form-group">
-          <label class="u-col-2 text-right u-form-label">checkbox:</label>
-          <div class="u-col-3">
-            <u-checkbox params='data:{model:$root.model,checkboxData:$root.checkboxData},umeta:{"id":"c1","data":"model","field":"isCtrlOpen","datasource":"checkboxData"}'>
-            </u-checkbox>
-          </div>
-        </div>
-        <div class="u-form-group">
-          <label class="u-col-2 text-right u-form-label">radio:</label>
-          <div class="u-col-3">
-            <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
-            </u-radio>
-          </div>
-        </div>
-        <div class="u-form-group">
-          <label class="u-col-2 text-right u-form-label">textarea:</label>
-          <div class="u-col-3">
-            <textarea class="u-form-control" data-bind="value:$root.model.ref('enterpriseName')"></textarea>
-          </div>
-          </div>
-        </div>
-        <div>
-          获取值:app.getComp("id")----id 是对应组件初始化的id <br>
-
-          实际编辑态值会自动保存到model对应字段:参考app.dataTables.model.getCurrentRow().getValue("openTenderType")
         </div>
       </div>
     </box-content>
@@ -138,26 +129,7 @@ var viewModel = {
   radiodata: [
     {value: '1', name: '男'}, {value: '2', name: '女'}
   ],
-  model: projectdef.datatable,
-  //
-  detail_grid: {
-    'id': 'detail_grid',
-    'data': projectdef.associations.detailList,
-    'type': 'grid',
-    'multiSelect': false,
-    'editable': true,
-    canDrag: false,
-    canSwap: false,
-    columnMenu: false,
-    autoWidth: true,
-    fields: [
-      {'field': 'materialClassName', 'dataType': 'String', 'title': '物料分类', 'editType': 'addDetail', 'width': '125'},
-      {'field': 'materialName', 'dataType': 'String', 'title': '物料信息', 'editType': 'addDetail', 'renderType': 'timeRender', 'sortable': true, 'width': '125'},
-      {'field': 'num', 'dataType': 'String', 'title': '数量', 'editType': 'float', 'editOptions': {'validType': 'float', 'precision': '8'}, 'sumCol': true, 'width': '125'},
-      {'field': 'unit', 'dataType': 'String', 'title': '单位', 'editType': 'addDetail', 'width': '125'},
-      {'field': 'reqDesc', 'dataType': 'String', 'title': '需求描述', 'editType': 'string', 'sumCol': true, 'width': '125'}
-    ]
-  }
+  model: projectdef.datatable
 }
 
 window.app = window.u.createApp({
@@ -165,3 +137,25 @@ window.app = window.u.createApp({
   model: viewModel
 })
 ```
+### 4.组件列表
+已完成组件
+
+- u-select
+- u-checkbox
+- u-datepicker
+- u-radio
+- u-switch
+- box
+- box-fliter
+- box-content
+- box-tabs
+
+计划完成组件
+- u-grid (会进行结合datatabl的深度封装，不推荐一般用户使用)
+- u-year
+- u-month
+- u-time
+- pagination
+- validate-input
+- tree
+- fileupload

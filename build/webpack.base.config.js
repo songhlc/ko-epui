@@ -1,7 +1,8 @@
 var basepath=process.cwd(),
     path = require('path'),
     distpath = path.resolve(basepath,  "./dist"),
-    ExtractTextPlugin = require("extract-text-webpack-plugin")
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    webpack = require("webpack");
 var projectRoot = path.resolve(__dirname, '../')
 //当前支持的所有语种及对应多语资源包
 var config = {
