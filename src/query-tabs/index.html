@@ -1,0 +1,7 @@
+<div class="query-tabs" data-bind="foreach: items">
+  <input name="query-tabs" type="radio" data-bind="checked: $parent.curState,value:state,attr:{id:'query_tabs'+$index()}">
+  <div class="query-tab" data-bind="click:$parent.handler">
+      <label  data-bind="text:title,attr:{for:'query_tabs'+$index()}"></label>
+      <span data-bind="text:'(' + num + ')'"></span>
+  </div>
+</div>

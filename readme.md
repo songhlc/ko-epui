@@ -10,6 +10,8 @@
 - 3.使用
 - 4.组件列表
 - 5.多页面应用脚手架
+- 6.更新日志
+- 7. [Document](https://github.com/songhlc/ko-epui/blob/master/document.md)
 
 
 ## 1.介绍
@@ -56,13 +58,27 @@ date日期组件
 npm install ko-epui
 ```
 
+查看项目示例,下载本工程后运行
+```
+npm install
+npm run dev
+```
+访问http://localhost:8084即可
+
 ### 3.如何使用
 
 ```
 import 'ko-epui/dist/ko-epui.css'
-import 'ko-epui'
+
+import ko from 'ko-epui'
+
+or
+
+import from 'ko-epui'
+
 
 ```
+组件中默认会注册window.ko = ko
 
 #### 3.1 html file
 ```
@@ -163,3 +179,11 @@ window.app = window.u.createApp({
 - validate-input
 - tree
 - fileupload
+
+### 5.多页面应用脚手架
+
+敬请期待
+
+### 6.更新日志
+
+- 2016-12-24 添加query-tabs组件,状态tab选项卡(通常配合grid使用)

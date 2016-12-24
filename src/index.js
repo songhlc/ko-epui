@@ -1,7 +1,7 @@
+import ko from 'knockout'
 import './index.less'
-
-let ko = window.ko
-let complist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item']
+window.ko = ko
+let complist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'query-tabs']
 let iuapcomplist = ['u-datepicker', 'u-select', 'u-switch', 'u-checkbox', 'u-radio']
 // 注册普通组件
 function register (name) {
