@@ -1,12 +1,13 @@
+import ko from 'knockout'
 import 'src/index.less'
-import ko from 'src/index'
+import 'src/index'
 
 var viewModel = {
   id: ko.observable(''),
   save: function (msg) {
     window.alert('save me')
   },
-  statuItems: ko.observable([
+  statuItems: ko.observableArray([
     {
       title: '待收货',
       state: 1,

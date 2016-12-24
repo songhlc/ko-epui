@@ -12,6 +12,5 @@ env:
 
 before_install:
   - npm install -g webpack
-  - npm install
 
 script: npm run build
