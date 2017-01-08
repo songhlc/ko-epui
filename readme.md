@@ -175,11 +175,12 @@ window.app = window.u.createApp({
 
 计划完成组件
 - u-grid (会进行结合datatable的深度封装，不推荐一般用户使用)
-- u-time
+- u-time /*新增更好的time实现*/
 - pagination
 - validate-input
 - tree
 - fileupload
+- datetime
 
 ### 5.多页面应用脚手架
 
