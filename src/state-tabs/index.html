@@ -1,0 +1,6 @@
+<div class="state-tabs" data-bind="foreach:items">
+  <div class="state-tab" data-bind="click:function(){$parent.handler($data,$index())},css:$parent.index()==$index()?'active':''">
+    <label data-bind="text:title"></label>
+    <span data-bind="text:'(' + num + ')'"></span>
+  </div>
+</div>

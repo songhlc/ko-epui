@@ -24,7 +24,7 @@ var viewModel = {
       num: 0
     }
   ]),
-  index: 0,
+  index: ko.observable(0),
   statusChange (status) {
     console.log(status)
   },
@@ -48,11 +48,35 @@ var viewModel = {
   ],
   model: new window.u.DataTable({
     meta: {
-      enterpriseName: '公司名称',
-      createField: 'test'
+      enterpriseName: '',
+      createField: '',
+      uyear: '',
+      switch: '',
+      checkbox: '',
+      exceptStartTime: {type: 'datetime'},
+      createTime: {type: 'datetime'},
+      purchaseType: '',
+      radio: {type: 'Boolean'},
+      umonth: '',
+      uyearmonth: '',
+      ucurrency: {curSymbol: '￥'}
     }
   })
 }
+viewModel.model.setSimpleData({
+  enterpriseName: '公司名称1',
+  createField: 'test1',
+  uyear: 2016,
+  umonth: 12,
+  switch: 1,
+  checkbox: '1',
+  exceptStartTime: '2015-02-02',
+  createTime: '2016-02-02',
+  purchaseType: '2',
+  radio: '2',
+  uyearmonth: '2016-12',
+  ucurrency: '200.02'
+})
 window.app = window.u.createApp({
   el: 'body',
   model: viewModel

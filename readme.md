@@ -169,11 +169,12 @@ window.app = window.u.createApp({
 - box-fliter
 - box-content
 - box-tabs
-
-计划完成组件
-- u-grid (会进行结合datatabl的深度封装，不推荐一般用户使用)
 - u-year
 - u-month
+- u-currency
+
+计划完成组件
+- u-grid (会进行结合datatable的深度封装，不推荐一般用户使用)
 - u-time
 - pagination
 - validate-input
@@ -185,5 +186,6 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
-
+- 2017-01-08 适配kero 3.1.19, state-tabs取代query-tabs
+- 2017-01-07 添加u-year,u-month,u-yearmonth,u-currency组件
 - 2016-12-24 添加query-tabs组件,状态tab选项卡(通常配合grid使用)

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>example</title>
     <link rel="stylesheet" href="http://design.yyuap.com/static/uui/latest/css/u.min.css">
-  <link rel="stylesheet" href="./ko-epui.css">
+    <link rel="stylesheet" href="./ko-epui.css">
   <style>
     body{
       background-color: #eceff1;
@@ -190,8 +190,10 @@
       <a href="#" class="btn btn-outline btn-sm m-r-sm"><span class="fa fa-reply"></span>&nbsp;返回</a>
     </div>
   </box-filter>
-  <box-tabs params="title: 'status 切换'">
-    <query-tabs params="items: $root.statuItems, handler: $root.statusChange, index:$root.index"></query-tabs>
+  <box-tabs>
+    <state-tabs params="items: $root.statuItems, handler: $root.statusChange, index:$root.index">
+
+    </state-tabs>
   </box-tabs>
   <box-content params="title: '表单显示'">
     <div class="u-row">
@@ -211,21 +213,21 @@
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">switch:</label>
         <div class="u-col-3">
-          <u-switch params='data:{model:$root.model},umeta:{"data":"model","field":"isCtrlOpen"}'>
+          <u-switch params='data:{model:$root.model},umeta:{"data":"model","field":"switch"}'>
           </u-switch>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">checkbox:</label>
         <div class="u-col-3">
-          <u-checkbox params='data:{model:$root.model,checkboxData:$root.checkboxData},umeta:{"id":"c1","data":"model","field":"isCtrlOpen","datasource":"checkboxData"}'>
+          <u-checkbox params='data:{model:$root.model,checkboxData:$root.checkboxData},umeta:{"id":"c1","data":"model","field":"checkbox","datasource":"checkboxData"}'>
           </u-checkbox>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">radio:</label>
         <div class="u-col-3">
-          <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
+          <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"radio","datasource":"radiodata"}'>
           </u-radio>
         </div>
       </div>
@@ -233,6 +235,25 @@
         <label class="u-col-2 text-right u-form-label">textarea:</label>
         <div class="u-col-3">
           <textarea class="u-form-control" data-bind="value:$root.model.enterpriseName"></textarea>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">年,月:</label>
+        <div class="u-col-10">
+          <u-year class="form-control" params='data:{model:$root.model},umeta:{"id":"uyear","data":"model","field":"uyear"}'></u-year>
+          <u-month class="form-control" params='data:{model:$root.model},umeta:{"id":"umonth","data":"model","field":"umonth"}'></u-month>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">年月:</label>
+        <div class="u-col-10">
+          <u-yearmonth class="form-control" params='data:{model:$root.model},umeta:{"id":"uyearmonth","data":"model","field":"uyearmonth"}'></u-yearmonth>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">币种显示:</label>
+        <div class="u-col-10">
+          <u-currency class="form-control" params='data:{model:$root.model},umeta:{"id":"ucurrency","data":"model","field":"ucurrency"}'></u-currency>
         </div>
       </div>
     </div>
@@ -248,7 +269,7 @@
 </box>
 <script src="http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"></script>
 <script src="http://design.yyuap.com/static/knockout/knockout-3.2.0.debug.js"></script>
-<script src="http://design.yyuap.com/static/uui/latest/js/u.js"></script>
+<script src="http://design.yyuap.com/static/uui/latest/js/u.min.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

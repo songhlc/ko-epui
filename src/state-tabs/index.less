@@ -1,0 +1,43 @@
+.state-tabs{
+  cursor: pointer;
+  position: relative;
+  .state-tab{
+    position: relative;
+    margin-bottom: 0;
+    display: inline-block;
+    padding: 0 10px 6px 10px;
+    color:#999;
+    font-size: 14px;
+  }
+  .state-tab.active {
+    background: transparent;
+    color:#333
+  }
+  .state-tab:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s;
+  }
+  .state-tab::after {
+    background-color: #F4786B;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  .state-tab.active::after,.state-tab.active:hover::after{
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  .state-tab:hover::after{
+    opacity: .5;
+    transform: scaleX(1);
+  }
+  .state-tab span{
+    vertical-align: middle;
+  }
+}

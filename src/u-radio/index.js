@@ -1,13 +1,7 @@
 /* iuap datepicer */
-import _ from 'lodash'
+import {CreatApp} from '../base'
 function createDate (params, componentInfo) {
-  let dom = componentInfo.element.children[0]
   let umeta = {'type': 'u-radio'}
-  umeta = _.extend(umeta, params.umeta)
-  dom.setAttribute('u-meta', JSON.stringify(umeta))
-  let vm = {
-  }
-  vm = _.extend(vm, params.data)
-  window.app.createComp(dom, vm)
+  CreatApp(componentInfo, umeta, params)
 }
 export default createDate
