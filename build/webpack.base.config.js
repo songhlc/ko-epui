@@ -46,6 +46,10 @@ var config = {
     },
     plugins: [
       new ExtractTextPlugin("ko-epui.css")
-    ]
+    ],
+    htmlLoader: {
+      //ko虚拟dom不能注释
+      ignoreCustomComments: [ /^!/, /^( [\/]?ko )(\S|\s)*(\s?)$/]
+    }
 }
 module.exports = config

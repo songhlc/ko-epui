@@ -1,6 +1,5 @@
-import ko from 'knockout'
 import './index.less'
-window.ko = ko
+/* global ko */
 let complist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'query-tabs', 'state-tabs']
 let iuapcomplist = ['u-datepicker', 'u-select', 'u-switch', 'u-checkbox', 'u-radio', 'u-year', 'u-month', 'u-yearmonth', 'u-currency']
 // 注册普通组件
