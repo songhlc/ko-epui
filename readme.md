@@ -172,13 +172,14 @@ window.app = window.u.createApp({
 - u-year
 - u-month
 - u-currency
+- u-tree
 
 计划完成组件
 - u-grid (会进行结合datatable的深度封装，不推荐一般用户使用)
 - u-time /*新增更好的time实现*/
 - pagination
+- u-input
 - validate-input
-- tree
 - fileupload
 - datetime
 
@@ -187,6 +188,7 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
-- 2017-01-08 v1.2.1 适配kero 3.1.19, state-tabs取代query-tabs
+- 2017-02-09 v1.3.1 新增u-tree组件
+- 2017-01-08 v1.2.3 适配kero 3.1.19, state-tabs取代query-tabs
 - 2017-01-07 添加u-year,u-month,u-yearmonth,u-currency组件
 - 2016-12-24 添加query-tabs组件,状态tab选项卡(通常配合grid使用)

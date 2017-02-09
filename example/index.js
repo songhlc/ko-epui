@@ -1,7 +1,6 @@
-import ko from 'knockout'
 import 'src/index.less'
 import 'src/index'
-
+/* global ko */
 var viewModel = {
   id: ko.observable(''),
   save: function (msg) {
@@ -27,6 +26,37 @@ var viewModel = {
   index: ko.observable(0),
   statusChange (status) {
     console.log(status)
+  },
+  // 树形模型
+  treemodel: new window.u.DataTable({
+    meta: {
+      'id': {
+        'value': ''
+      },
+      'pid': {
+        'value': ''
+      },
+      'title': {
+        'value': ''
+      }
+    }
+  }),
+  treeOption: {
+    callback: {
+      beforeClick: function (treeId, treeNode, clickFlag) {
+        console.log('before click')
+        console.log(treeId)
+        console.log(treeNode)
+        console.log(clickFlag)
+      },
+      onClick: function (event, treeId, treeNode, clickFlag) {
+        console.log('on click')
+        console.log(event)
+        console.log(treeId)
+        console.log(treeNode)
+        console.log(clickFlag)
+      }
+    }
   },
   comboData: [
     {
@@ -77,6 +107,30 @@ viewModel.model.setSimpleData({
   uyearmonth: '2016-12',
   ucurrency: '200.02'
 })
+var treedata = [{
+  'id': '01',
+  'pid': 'root',
+  'title': 'f1'
+}, {
+  'id': '02',
+  'pid': 'root',
+  'title': 'f2'
+}, {
+  'id': '101',
+  'pid': '01',
+  'title': 'f11'
+}, {
+  'id': '102',
+  'pid': '01',
+  'title': 'f12'
+}, {
+  'id': '201',
+  'pid': '02',
+  'title': 'f21'
+}]
+viewModel.treemodel.removeAllRows()
+viewModel.treemodel.setSimpleData(treedata)
+
 window.app = window.u.createApp({
   el: 'body',
   model: viewModel

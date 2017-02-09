@@ -1,7 +1,7 @@
 import './index.less'
 /* global ko */
 let complist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'query-tabs', 'state-tabs']
-let iuapcomplist = ['u-datepicker', 'u-select', 'u-switch', 'u-checkbox', 'u-radio', 'u-year', 'u-month', 'u-yearmonth', 'u-currency']
+let iuapcomplist = ['u-datepicker', 'u-select', 'u-switch', 'u-checkbox', 'u-radio', 'u-year', 'u-month', 'u-yearmonth', 'u-currency', 'u-tree']
 // 注册普通组件
 function register (name) {
   ko.components.register(name, {

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>example</title>
     <link rel="stylesheet" href="http://design.yyuap.com/static/uui/latest/css/u.min.css">
+    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/latest/css/tree.min.css">
     <link rel="stylesheet" href="./ko-epui.css">
   <style>
     body{
@@ -256,6 +257,13 @@
           <u-currency class="form-control" params='data:{model:$root.model},umeta:{"id":"ucurrency","data":"model","field":"ucurrency"}'></u-currency>
         </div>
       </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">树形展示:</label>
+        <div class="u-col-10">
+          <u-tree class="form-control" params='data:{model:$root.treemodel,treeSetting:$root.treeOption},umeta:{"id":"tree","data":"model","idField":"id","pidField":"pid","nameField":"title","setting":"treeSetting"}'>
+          </u-tree>
+        </div>
+      </div>
     </div>
     </div>
   </box-content>
@@ -270,6 +278,7 @@
 <script src="http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"></script>
 <script src="//cdn.bootcss.com/knockout/3.4.1/knockout-min.js"></script>
 <script src="http://design.yyuap.com/static/uui/latest/js/u.min.js"></script>
+<script src="http://design.yyuap.com/static/uui/latest/js/u-tree.min.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

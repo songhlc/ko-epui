@@ -37,8 +37,48 @@ npm run dev
 </box>
 ```
 
-## 1.2box-content
+## 1.2 box-content
 内容区域
 ```
 
+```
+
+## 1.3 u-tree
+需要依赖uui下的css/tree.min.css 和 js/u-tree.min.js
+```
+<u-tree class="form-control" params='data:{model:$root.treemodel,treeSetting:$root.treeOption},
+  umeta:{"id":"tree","data":"model","idField":"id","pidField":"pid","nameField":"title","setting":"treeSetting"}'>
+</u-tree>
+viewmodel:{
+  treemodel: new window.u.DataTable({
+    meta: {
+      'id': {
+        'value': ''
+      },
+      'pid': {
+        'value': ''
+      },
+      'title': {
+        'value': ''
+      }
+    }
+  }),
+  treeOption: {
+    callback: {
+      beforeClick: function (treeId, treeNode, clickFlag) {
+        console.log('before click')
+        console.log(treeId)
+        console.log(treeNode)
+        console.log(clickFlag)
+      },
+      onClick: function (event, treeId, treeNode, clickFlag) {
+        console.log('on click')
+        console.log(event)
+        console.log(treeId)
+        console.log(treeNode)
+        console.log(clickFlag)
+      }
+    }
+  }
+}
 ```
