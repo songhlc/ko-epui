@@ -4,7 +4,14 @@ import 'src/index'
 var viewModel = {
   id: ko.observable(''),
   save: function (msg) {
-    window.alert('save me')
+    let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
+    if (validator.passed) {
+      window.alert('save me')
+    } else {
+      for (let i = 0; i < validator.notPassedArr.length; i++) {
+        validator.notPassedArr[i].comp.doValidate()
+      }
+    }
   },
   statuItems: ko.observableArray([
     {
@@ -78,6 +85,7 @@ var viewModel = {
   ],
   model: new window.u.DataTable({
     meta: {
+      name: '',
       enterpriseName: '',
       createField: '',
       uyear: '',
@@ -93,20 +101,23 @@ var viewModel = {
     }
   })
 }
-viewModel.model.setSimpleData({
-  enterpriseName: '公司名称1',
-  createField: 'test1',
-  uyear: 2016,
-  umonth: 12,
-  switch: 1,
-  checkbox: '1',
-  exceptStartTime: '2015-02-02',
-  createTime: '2016-02-02',
-  purchaseType: '2',
-  radio: '2',
-  uyearmonth: '2016-12',
-  ucurrency: '200.02'
-})
+setTimeout(function () {
+  viewModel.model.setSimpleData({
+    enterpriseName: '公司名称1',
+    createField: 'test1',
+    uyear: 2016,
+    umonth: 12,
+    switch: 1,
+    checkbox: '1',
+    exceptStartTime: '2015-02-02',
+    createTime: '2016-02-02',
+    purchaseType: '2',
+    radio: '2',
+    uyearmonth: '2016-12',
+    ucurrency: '200.02',
+    name: ''
+  })
+}, 100)
 var treedata = [{
   'id': '01',
   'pid': 'root',

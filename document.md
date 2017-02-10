@@ -82,3 +82,22 @@ viewmodel:{
   }
 }
 ```
+
+## u-input
+```
+<u-input params='data:{model:$root.model},umeta:{"id":"require","required":"true","type":"string","data":"model","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
+//type可以是string integer float等等 可以参考 [kero校验规则设置](http://tinper.org/dist/kero/docs/validateapi.html)
+
+//保存方法前进行校验
+save: function (msg) {
+    let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
+    if (validator.passed) {
+      window.alert('save me')
+    } else {
+      for (let i = 0; i < validator.notPassedArr.length; i++) {
+        validator.notPassedArr[i].comp.doValidate()
+      }
+    }
+  }
+
+```

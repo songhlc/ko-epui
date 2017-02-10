@@ -198,6 +198,18 @@
   </box-tabs>
   <box-content params="title: '表单显示'">
     <div class="u-row">
+      <div class="u-form-group" style="">
+        <label for="" class="u-col-2 text-right">tooltip</label>
+        <u-tooltip class="u-col-3" params="option:{title:$root.model.ref('enterpriseName'), placement:'bottom'}">
+          <label for="" data-bind="text:$root.model.ref('enterpriseName')"></label>
+        </u-tooltip>
+      </div>
+      <div class="u-form-group">
+        <label for="" class="u-col-2 text-right u-form-label">带校验输入框</label>
+        <div class="u-col-3">
+          <u-input params='data:{model:$root.model},umeta:{"id":"require","required":"true","type":"string","data":"model","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
+        </div>
+      </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">日期选择:</label>
         <div class="u-col-3">
