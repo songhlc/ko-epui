@@ -188,6 +188,7 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
+- 2017-02-16 v1.4.2 修复radio bug
 - 2017-02-09 v1.3.3 新增u-tree组件
 - 2017-01-08 v1.2.3 适配kero 3.1.19, state-tabs取代query-tabs
 - 2017-01-07 添加u-year,u-month,u-yearmonth,u-currency组件
