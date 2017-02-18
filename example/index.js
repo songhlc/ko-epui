@@ -146,3 +146,25 @@ window.app = window.u.createApp({
   el: 'body',
   model: viewModel
 })
+setTimeout(function () {
+  viewModel.statuItems(
+    [
+      {
+        title: '待收货',
+        state: 1,
+        num: 1
+      },
+      {
+        title: '已收货',
+        state: 2,
+        num: 2
+      },
+      {
+        title: '待收货',
+        state: 3,
+        num: 3
+      }
+    ]
+  )
+  viewModel.index(2)
+}, 1000)
