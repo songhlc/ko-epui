@@ -202,7 +202,7 @@
         <label for="" class="u-col-2 text-right">tooltip</label>
         <!--<u-pagination params='data:{model:$root.model}'>-->
         <!--</u-pagination>-->
-        <u-pagination params='data: $root.model'>
+        <u-pagination params='data: {model: $root.paginationmodel}, umeta:{"data": "model"}'>
         </u-pagination>
       </div>
       <div class="u-form-group" style="">
@@ -310,7 +310,7 @@
 </box>
 <script src="http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"></script>
 <script src="//cdn.bootcss.com/knockout/3.4.1/knockout-min.js"></script>
-<script src="http://design.yyuap.com/static/uui/latest/js/u.min.js"></script>
+<script src="http://design.yyuap.com/static/uui/latest/js/u.js"></script>
 <script src="http://design.yyuap.com/static/uui/latest/js/u-tree.min.js"></script>
 <script src="./index.js"></script>
 </body>

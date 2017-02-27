@@ -1,3 +1,4 @@
+/* eslint-disable */
 import 'src/index.less'
 import 'src/index'
 /* global ko */
@@ -37,6 +38,12 @@ var viewModel = {
   statusChange (status) {
     console.log(status)
   },
+  paginationmodel: new window.u.DataTable({
+    meta: {
+      'id': '',
+      'name': ''
+    }
+  }),
   // 树形模型
   treemodel: new window.u.DataTable({
     meta: {
@@ -145,7 +152,41 @@ var treedata = [{
 }]
 viewModel.treemodel.removeAllRows()
 viewModel.treemodel.setSimpleData(treedata)
-
+let paginationData = [
+  {
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  }
+]
+debugger
+viewModel.paginationmodel.pageIndex(0)
+viewModel.paginationmodel.pageSize(10)
+viewModel.paginationmodel.totalPages(15)
+viewModel.paginationmodel.setSimpleData(paginationData)
 window.app = window.u.createApp({
   el: 'body',
   model: viewModel
@@ -172,3 +213,4 @@ setTimeout(function () {
   )
   viewModel.index(2)
 }, 1000)
+/* eslint-disable */
