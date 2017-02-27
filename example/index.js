@@ -2,6 +2,9 @@ import 'src/index.less'
 import 'src/index'
 /* global ko */
 var viewModel = {
+  sizechange: function () {
+    console.log('hello')
+  },
   id: ko.observable(''),
   save: function (msg) {
     let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
