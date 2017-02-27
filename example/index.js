@@ -109,7 +109,13 @@ var viewModel = {
       uyearmonth: '',
       ucurrency: {curSymbol: '￥'}
     }
-  })
+  }),
+  sizeChange (obj) {
+    console.log(obj)
+  },
+  pageChange (obj) {
+    console.log(obj)
+  }
 }
 setTimeout(function () {
   viewModel.model.setSimpleData({
@@ -181,7 +187,6 @@ let paginationData = [
     name: '2'
   }
 ]
-debugger
 viewModel.paginationmodel.pageIndex(0)
 viewModel.paginationmodel.pageSize(10)
 viewModel.paginationmodel.totalPages(15)
