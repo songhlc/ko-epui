@@ -105,6 +105,7 @@ var viewModel = {
   })
 }
 setTimeout(function () {
+  // viewModel.model.pageSize(10)
   viewModel.model.setSimpleData({
     enterpriseName: '公司名称1',
     createField: 'test1',
