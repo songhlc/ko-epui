@@ -200,6 +200,11 @@
     <div class="u-row">
       <div class="u-form-group" style="">
         <label for="" class="u-col-2 text-right">tooltip</label>
+        <u-pagination params='data:{model:$root.model}'>
+        </u-pagination>
+      </div>
+      <div class="u-form-group" style="">
+        <label for="" class="u-col-2 text-right">tooltip</label>
         <u-tooltip class="u-col-3" params="option:{title:$root.model.ref('enterpriseName'), placement:'bottom'}">
           <label for="" data-bind="text:$root.model.ref('enterpriseName')"></label>
         </u-tooltip>
