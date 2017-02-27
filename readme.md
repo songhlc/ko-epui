@@ -173,11 +173,11 @@ window.app = window.u.createApp({
 - u-month
 - u-currency
 - u-tree
+- u-pagination
 
 计划完成组件
 - u-grid (会进行结合datatable的深度封装，不推荐一般用户使用)
 - u-time /*新增更好的time实现*/
-- pagination
 - u-input
 - validate-input
 - fileupload

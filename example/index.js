@@ -4,7 +4,10 @@ import 'src/index'
 /* global ko */
 var viewModel = {
   sizechange: function () {
-    console.log('hello')
+    console.log('sizechange')
+  },
+  pagechange: function () {
+    console.log('pagechange')
   },
   id: ko.observable(''),
   save: function (msg) {
@@ -182,8 +185,8 @@ let paginationData = [
     name: '2'
   }
 ]
-debugger
-viewModel.paginationmodel.pageIndex(0)
+// debugger
+// viewModel.paginationmodel.pageIndex(0)
 viewModel.paginationmodel.pageSize(10)
 viewModel.paginationmodel.totalPages(15)
 viewModel.paginationmodel.setSimpleData(paginationData)
