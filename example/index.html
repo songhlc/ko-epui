@@ -200,10 +200,10 @@
     <div class="u-row">
       <div class="u-form-group" style="">
         <label for="" class="u-col-2 text-right">tooltip</label>
-        <u-pagination params='data:{model: $root.paginationmodel},sizeChange: $root.sizechange, umeta:{"data": "model","sizeChange": "sizeChange"}'>
-        </u-pagination>
-        <!--<u-pagination params='data:{model: $root.paginationmodel}, sizeChange: $root.sizechange, umeta:{"data": "model"}'>-->
+        <!--<u-pagination params='data:{model:$root.model}'>-->
         <!--</u-pagination>-->
+        <u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}, umeta:{}'>
+        </u-pagination>
       </div>
       <div class="u-form-group" style="">
         <label for="" class="u-col-2 text-right">tooltip</label>
@@ -214,54 +214,54 @@
       <div class="u-form-group">
         <label for="" class="u-col-2 text-right u-form-label">带校验输入框</label>
         <div class="u-col-3">
-          <u-input params='data:{model:$root.model},umeta:{"id":"require","required":"true","type":"string","data":"model","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
+          <u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">日期选择:</label>
         <div class="u-col-3">
-          <u-datepicker params='data:{model:$root.model,comboData: $root.comboData},umeta:{"id":"udatetime222","data":"model","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
+          <u-datepicker params='vm:{data:$root.model},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">下拉框:</label>
         <div class="u-col-3">
-          <u-select params='data:{model:$root.model,comboData: $root.comboData},umeta:{"data":"model","field":"purchaseType","datasource":"comboData"}'>
+          <u-select params='vm:{data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
           </u-select>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">switch:</label>
         <div class="u-col-3">
-          <u-switch params='data:{model:$root.model},umeta:{"data":"model","field":"switch"}'>
+          <u-switch params='vm:{data:$root.model},umeta:{"field":"switch"}'>
           </u-switch>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">checkbox:</label>
         <div class="u-col-3">
-          <u-checkbox params='data:{model:$root.model,checkboxData:$root.checkboxData},umeta:{"id":"c1","data":"model","field":"checkbox","datasource":"checkboxData"}'>
+          <u-checkbox params='vm:{data:$root.model,datasource:$root.checkboxData},umeta:{"id":"c1","field":"checkbox"}'>
           </u-checkbox>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">radio:</label>
         <div class="u-col-3">
-          <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"radio","datasource":"radiodata"}'>
+          <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r1","field":"radio"}'>
           </u-radio>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">radio:</label>
         <div class="u-col-3">
-          <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r2","data":"model","field":"radio","datasource":"radiodata"}'>
+          <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r2","field":"radio"}'>
           </u-radio>
         </div>
       </div>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">radio:</label>
         <div class="u-col-3">
-          <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r3","data":"model","field":"radio","datasource":"radiodata"}'>
+          <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r3","field":"radio"}'>
           </u-radio>
         </div>
       </div>
@@ -274,8 +274,8 @@
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">年,月:</label>
         <div class="u-col-10">
-          <u-year class="form-control" params='data:{model:$root.model},umeta:{"id":"uyear","data":"model","field":"uyear"}'></u-year>
-          <u-month class="form-control" params='data:{model:$root.model},umeta:{"id":"umonth","data":"model","field":"umonth"}'></u-month>
+          <u-year class="form-control" params='vm:{data:$root.model},umeta:{"id":"uyear","field":"uyear"}'></u-year>
+          <u-month class="form-control" params='vm:{data:$root.model},umeta:{"id":"umonth","field":"umonth"}'></u-month>
         </div>
       </div>
       <div class="u-form-group">

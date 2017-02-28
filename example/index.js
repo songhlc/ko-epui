@@ -4,10 +4,7 @@ import 'src/index'
 /* global ko */
 var viewModel = {
   sizechange: function () {
-    console.log('sizechange')
-  },
-  pagechange: function () {
-    console.log('pagechange')
+    console.log('hello')
   },
   id: ko.observable(''),
   save: function (msg) {
@@ -112,10 +109,15 @@ var viewModel = {
       uyearmonth: '',
       ucurrency: {curSymbol: '￥'}
     }
-  })
+  }),
+  sizeChange (obj) {
+    console.log(obj)
+  },
+  pageChange (obj) {
+    console.log(obj)
+  }
 }
 setTimeout(function () {
-  // viewModel.model.pageSize(10)
   viewModel.model.setSimpleData({
     enterpriseName: '公司名称1',
     createField: 'test1',
@@ -185,8 +187,7 @@ let paginationData = [
     name: '2'
   }
 ]
-// debugger
-// viewModel.paginationmodel.pageIndex(0)
+viewModel.paginationmodel.pageIndex(0)
 viewModel.paginationmodel.pageSize(10)
 viewModel.paginationmodel.totalPages(15)
 viewModel.paginationmodel.setSimpleData(paginationData)
