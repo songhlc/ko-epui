@@ -104,6 +104,7 @@ save: function (msg) {
 
 ## u-pagination
 ```
+//数据,事件使用params选项进行绑定,属性使用umeta进行绑定
 <u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}'>
            </u-pagination>
 

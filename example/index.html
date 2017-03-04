@@ -200,11 +200,6 @@
     <div class="u-row">
       <div class="u-form-group" style="">
         <label for="" class="u-col-2 text-right">tooltip</label>
-        <u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}, umeta:{}'>
-        </u-pagination>
-      </div>
-      <div class="u-form-group" style="">
-        <label for="" class="u-col-2 text-right">tooltip</label>
         <u-tooltip class="u-col-3" params="option:{title:$root.model.ref('enterpriseName'), placement:'bottom'}">
           <label for="" data-bind="text:$root.model.ref('enterpriseName')"></label>
         </u-tooltip>
@@ -293,6 +288,13 @@
         <div class="u-col-10">
           <u-tree class="form-control" params='data:{model:$root.treemodel,treeSetting:$root.treeOption},umeta:{"id":"tree","data":"model","idField":"id","pidField":"pid","nameField":"title","setting":"treeSetting"}'>
           </u-tree>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">分页显示:</label>
+        <div class="u-col-10">
+          <u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}, umeta:{}'>
+          </u-pagination>
         </div>
       </div>
     </div>

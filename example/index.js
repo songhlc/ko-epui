@@ -187,7 +187,7 @@ let paginationData = [
     name: '2'
   }
 ]
-viewModel.paginationmodel.pageIndex(0)
+// viewModel.paginationmodel.pageIndex(0)
 viewModel.paginationmodel.pageSize(10)
 viewModel.paginationmodel.totalPages(15)
 viewModel.paginationmodel.setSimpleData(paginationData)

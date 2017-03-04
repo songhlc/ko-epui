@@ -34,7 +34,12 @@ date日期组件
     </label>
 </div>
 
-//新的方式：
+//新的方式1 推荐使用：
+<u-radio params='vm:{data:$root.radiodata},umeta:{"id":"r1","field":"openTenderType"}'>
+</u-radio>
+```
+
+//方式2 兼容：
 <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
 </u-radio>
 ```
