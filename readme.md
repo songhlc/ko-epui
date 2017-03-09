@@ -35,7 +35,7 @@ date日期组件
 </div>
 
 //新的方式：
-<u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
+<u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r1","field":"openTenderType"}'>
 </u-radio>
 ```
 
@@ -93,20 +93,20 @@ import from 'ko-epui'
         <div class="u-form-group">
           <label class="u-col-2 text-right u-form-label">日期选择:</label>
           <div class="u-col-3">
-            <u-datepicker params='data:{model:$root.model,comboData: $root.comboData},umeta:{"id":"udatetime222","data":"model","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
+            <u-datepicker params='vm:{data:$root.model,datasource: $root.comboData},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
           </div>
         </div>
         <div class="u-form-group">
           <label class="u-col-2 text-right u-form-label">下拉框:</label>
           <div class="u-col-3">
-            <u-select params='data:{model:$root.model,comboData: $root.comboData},umeta:{"data":"model","field":"purchaseType","datasource":"comboData"}'>
+            <u-select params='vm:{data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
             </u-select>
           </div>
         </div>
         <div class="u-form-group">
           <label class="u-col-2 text-right u-form-label">switch:</label>
           <div class="u-col-3">
-            <u-switch params='data:{model:$root.model},umeta:{"data":"model","field":"isCtrlOpen"}'>
+            <u-switch params='vm:{data:$root.model},umeta:{"data":"model","field":"isCtrlOpen"}'>
             </u-switch>
           </div>
         </div>
@@ -173,11 +173,12 @@ window.app = window.u.createApp({
 - u-month
 - u-currency
 - u-tree
+- pagination
+- sticky-box 吸顶菜单
 
 计划完成组件
 - u-grid (会进行结合datatable的深度封装，不推荐一般用户使用)
 - u-time /*新增更好的time实现*/
-- pagination
 - u-input
 - validate-input
 - fileupload
@@ -188,6 +189,8 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
+- 2017-03-10 v1.5.1 新增box-sticky 吸顶菜单组件
+- 2017-03-04 v1.4.3 新增pagination组件
 - 2017-02-16 v1.4.2 修复radio bug
 - 2017-02-09 v1.3.3 新增u-tree组件
 - 2017-01-08 v1.2.3 适配kero 3.1.19, state-tabs取代query-tabs

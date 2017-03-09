@@ -1,0 +1,49 @@
+.box-sticky-ctn{
+  overflow: hidden;
+  margin-bottom: 10px;
+  .box-sticky {
+    padding: 9px 20px 9px;
+    border: none;
+    background-color: #FFF;
+    min-height: 48px;
+    margin-left: 0;
+    margin-right: 0;
+    z-index: 1001;
+    .box-filter-title {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 32px;
+      margin-right: 20px;
+      color: #333333;
+    }
+  }
+}
+.sticky-anchor {
+  font-size: 12px;
+  display: inline-block;
+  position: relative;
+  padding: 0 5px 5px 5px;
+  text-decoration: none;
+  background: transparent;
+}
+.sticky-anchor:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.sticky-anchor::after {
+  background-color: #F4786B;
+  transform: scaleX(0);
+  opacity: 0;
+}
+.sticky-anchor.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}

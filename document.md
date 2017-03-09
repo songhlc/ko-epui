@@ -46,8 +46,8 @@ npm run dev
 ## 1.3 u-tree
 需要依赖uui下的css/tree.min.css 和 js/u-tree.min.js
 ```
-<u-tree class="form-control" params='data:{model:$root.treemodel,treeSetting:$root.treeOption},
-  umeta:{"id":"tree","data":"model","idField":"id","pidField":"pid","nameField":"title","setting":"treeSetting"}'>
+<u-tree class="form-control" params='vm:{data:$root.treemodel,setting:$root.treeOption},
+  umeta:{"id":"tree","idField":"id","pidField":"pid","nameField":"title"}'>
 </u-tree>
 viewmodel:{
   treemodel: new window.u.DataTable({
@@ -85,7 +85,7 @@ viewmodel:{
 
 ## u-input
 ```
-<u-input params='data:{model:$root.model},umeta:{"id":"require","required":"true","type":"string","data":"model","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
+<u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
 //type可以是string integer float等等 可以参考 [kero校验规则设置](http://tinper.org/dist/kero/docs/validateapi.html)
 
 //保存方法前进行校验
@@ -100,4 +100,16 @@ save: function (msg) {
     }
   }
 
+```
+## box-sticky
+```
+<box-sticky params="title:'吸顶菜单'">
+    <div class="u-col-8 text-center">
+      <a href="#a1" class="sticky-anchor active">表单显示</a>
+      <a href="#a2" class="sticky-anchor">使用说明</a>
+    </div>
+    <div class="u-col-2">
+      <button class="pull-right">btn</button>
+    </div>
+</box-sticky>
 ```
