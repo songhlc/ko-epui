@@ -33,12 +33,9 @@ date日期组件
         <span class="u-radio-label"></span>
     </label>
 </div>
-
 //新的方式1 推荐使用：
 <u-radio params='vm:{data:$root.radiodata},umeta:{"id":"r1","field":"openTenderType"}'>
 </u-radio>
-```
-
 //方式2 兼容1.3.x版本ko-epui：
 <u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
 </u-radio>
@@ -85,9 +82,9 @@ import from 'ko-epui'
 ```
 组件中默认会注册window.ko = ko
 
-#### 3.1 html file
+#### 3.1 html
 ```
-<box》
+<box>
     <box-content params="title: $root.title">
       title
     </box-content>
@@ -120,7 +117,7 @@ import from 'ko-epui'
   </box>
 
 ```
-
+#### 3.2 js
 ```
 var viewModel = {
   id: ko.observable(''),
