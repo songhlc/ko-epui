@@ -113,3 +113,18 @@ save: function (msg) {
     </div>
 </box-sticky>
 ```
+
+## u-pagination
+```
+//数据,事件使用params选项进行绑定,属性使用umeta进行绑定
+<u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}'>
+           </u-pagination>
+
+//分页组件特有事件 sizeChange/pageChange 以下函数自定义用以上方式进行绑定
+sizeChange (obj) {
+  console.log(obj)
+},
+pageChange (obj) {
+  console.log(obj)
+}
+

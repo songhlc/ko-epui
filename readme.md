@@ -34,8 +34,13 @@ date日期组件
     </label>
 </div>
 
-//新的方式：
-<u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r1","field":"openTenderType"}'>
+//新的方式1 推荐使用：
+<u-radio params='vm:{data:$root.radiodata},umeta:{"id":"r1","field":"openTenderType"}'>
+</u-radio>
+```
+
+//方式2 兼容1.3.x版本ko-epui：
+<u-radio params='data:{model:$root.model,radiodata:$root.radiodata},umeta:{"id":"r1","data":"model","field":"openTenderType","datasource":"radiodata"}'>
 </u-radio>
 ```
 
@@ -190,7 +195,7 @@ window.app = window.u.createApp({
 
 ### 6.更新日志
 - 2017-03-10 v1.5.1 新增box-sticky 吸顶菜单组件
-- 2017-03-04 v1.4.3 新增pagination组件
+- 2017-02-27 v1.4.3 新增pagination组件
 - 2017-02-16 v1.4.2 修复radio bug
 - 2017-02-09 v1.3.3 新增u-tree组件
 - 2017-01-08 v1.2.3 适配kero 3.1.19, state-tabs取代query-tabs
