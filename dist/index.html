@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example</title>
+    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/3.1.23/css/u.min.css">
+    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/3.1.23/css/tree.min.css">
+    <link rel="stylesheet" href="./ko-epui.css">
+  <style>
+    body{
+      background-color: #eceff1;
+    }
+    .w100 {
+      width: 100%;
+    }
+
+    .list-content{
+      min-height: 500px;
+    }
+
+    .inline-block{
+      display: inline-block;
+    }
+    .p-r{
+      padding-right: 10px;
+    }
+
+    .border0{
+      border: 0!important;
+    }
+
+
+
+    /*禁用button*/
+    .u-button[disabled]{
+      filter:alpha(opacity=50);
+      opacity:0.5;
+    }
+    /*分页选中颜色 songhlc*/
+    .u-pagination > .active > a, .u-pagination > .active > span, .u-pagination > .active > a:hover, .u-pagination > .active > span:hover, .u-pagination > .active > a:focus, .u-pagination > .active > span:focus{
+      background-color: #1baede;
+      border-color: #1baede;
+    }
+    /*iuap formgroupfix */
+    .fix-uformgroup .u-form-group{
+      margin-bottom: 10px;
+    }
+    .u-form-group .b-form-span{
+      color:#333;
+    }
+    .u-form-group label{
+      color: #999;
+      line-height: 36px;
+      margin-bottom: 0;
+    }
+    .u-form-group span{
+      color:#333;
+    }
+    /*表格*/
+    .table{
+      background: #FFFFFF;
+      border: 1px solid #d7d7d7;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    .table td{
+      text-align: left;
+    }
+    .table thead{
+      background: #f0f0f0;
+    }
+    .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+      border-top: 1px solid #e7eaec;
+      line-height: 1.42857;
+      padding: 8px;
+      vertical-align: top;
+    }
+    .table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+      border-top: 0;
+    }
+    .table>thead>tr>th {
+      border-bottom: 1px solid #DDD;
+      vertical-align: bottom;
+    }
+    .table thead tr th, .table thead tr td {
+      background: #F5F5F5;
+      font-size: 14px !important;
+      color: #666 !important;
+      line-height: 2;
+      font-weight: 500;
+    }
+    .table input{
+      width:100%;
+    }
+    .table tr:hover{
+      background-color: #d0eef9;
+    }
+    /*表格*/
+    input[disabled]{
+      border:none;
+    }
+    /*输入*/
+    .u-form-control{
+      border-radius:0;
+    }
+    .u-input-group .u-form-control{
+      box-shadow: none;
+    }
+    .u-form-control:focus {
+      border-color: #3e9ed3;
+    }
+    .u-form-control:focus~.fa-search, .u-form-control:focus~.uf-magnifyingglass{
+      color:#3e9ed3;
+    }
+    /*容器*/
+    .u-widget-body {
+      padding: 15px 20px 20px 20px;
+    }
+    .u-widget{
+      margin:0;
+    }
+
+    /*button*/
+    .u-button-info{
+      background-color:#1baede;
+      border:solid 1px #1baede;
+    }
+    .btn.btn-outline {
+      color: #444;
+      text-decoration: none;
+    }
+
+    .u-pagination {
+      display: inline-block !important;
+    }
+    .u-pagination>li[role=gap]>a {
+      border-bottom: 1px solid #d7d7d7;
+      border-top: 1px solid #d7d7d7;
+      line-height: 16px;
+    }
+    *{
+      box-sizing: border-box;
+    }
+    .btn{
+      display: inline-block;
+      padding: 6px 12px;
+      margin-bottom: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.42857143;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background-image: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+    .btn-primary {
+      background-color: #1baede;
+      border-color: #1baede;
+      color: #FFFFFF;
+    }
+    .btn-sm {
+      padding: 0px 14px;
+      min-width: 72px;
+      height: 34px;
+      line-height: 34px;
+      font-size: 14px;
+    }
+    .u-form-control:focus {
+      border-color: #3e9ed3 !important;
+      outline: 0;
+    }
+  </style>
+</head>
+<body>
+<box>
+  <div>navigator</div>
+  <box-sticky params="title:'吸顶菜单'">
+    <div class="u-col-8 text-center">
+      <a href="#a1" class="sticky-anchor active">表单显示</a>
+      <a href="#a2" class="sticky-anchor">使用说明</a>
+    </div>
+    <div class="u-col-2">
+      <button class="pull-right">btn</button>
+    </div>
+  </box-sticky>
+  <box-filter params="title: '编辑页面'" style="margin-top:20px">
+    <div class="pull-right">
+      <button class="btn btn-primary btn-sm  m-r-sm" data-bind="click:$root.save"><span class="fa fa-save"></span>&nbsp;保存</button>
+      <a href="#" class="btn btn-outline btn-sm m-r-sm"><span class="fa fa-reply"></span>&nbsp;返回</a>
+    </div>
+  </box-filter>
+  <box-tabs>
+    <state-tabs params="items: $root.statuItems, handler: $root.statusChange, index:$root.index">
+
+    </state-tabs>
+  </box-tabs>
+  <box-content params="title: '表单显示'" id="a1">
+    <form-ctn class="u-row" >
+      <form-group params="md:10">
+        <form-title params="md:2,sm:2,xs:4">form-title:</form-title>
+        <form-text params="text:$root.model.ref('enterpriseName'),md:4,sm:4,xs:8"></form-text>
+        <form-title params="text:'row2',md:2,sm:2,xs:4"></form-title>
+        <form-text params="text:'form-title-withparam',md:4,sm:4,xs:8"></form-text>
+        <form-title params="md:2,sm:2,xs:4">tooltip:</form-title>
+        <form-ctn params="md:4,sm:4,xs:8">
+          <u-tooltip params="option:{title:$root.model.ref('enterpriseName'), placement:'bottom'}">
+            <label for="" data-bind="text:$root.model.ref('enterpriseName')"></label>
+          </u-tooltip>
+        </form-ctn>
+
+        <form-title params="md:2,sm:2,xs:4">带校验输入框</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">日期选择:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-datepicker params='vm:{data:$root.model},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">下拉框:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-select params='vm:{data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
+          </u-select>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">switch:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-switch params='vm:{data:$root.model},umeta:{"field":"switch"}'>
+          </u-switch>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">checkbox:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-checkbox class="checkbox-inline" params='vm:{data:$root.model,datasource:$root.checkboxData},umeta:{"id":"c1","field":"checkbox"}'>
+          </u-checkbox>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">radio:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r1","field":"radio"}'>
+          </u-radio>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">radio2:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r2","field":"radio"}'>
+          </u-radio>
+        </form-ctn>
+      </form-group>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">textarea:</label>
+        <div class="u-col-3">
+          <textarea class="u-form-control" data-bind="value:$root.model.ref('enterpriseName')"></textarea>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">年,月:</label>
+        <div class="u-col-10">
+          <u-year class="form-control" params='vm:{data:$root.model},umeta:{"id":"uyear","field":"uyear"}'></u-year>
+          <u-month class="form-control" params='vm:{data:$root.model},umeta:{"id":"umonth","field":"umonth"}'></u-month>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">年月:</label>
+        <div class="u-col-10">
+          <u-yearmonth class="form-control" params='data:{model:$root.model},umeta:{"id":"uyearmonth","data":"model","field":"uyearmonth"}'></u-yearmonth>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">币种显示:</label>
+        <div class="u-col-10">
+          <u-currency class="form-control" params='data:{model:$root.model},umeta:{"id":"ucurrency","data":"model","field":"ucurrency"}'></u-currency>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">树形展示:</label>
+        <div class="u-col-10">
+          <u-tree class="form-control" params='data:{model:$root.treemodel,treeSetting:$root.treeOption},umeta:{"id":"tree","data":"model","idField":"id","pidField":"pid","nameField":"title","setting":"treeSetting"}'>
+          </u-tree>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label class="u-col-2 text-right u-form-label">分页显示:</label>
+        <div class="u-col-10">
+          <u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}, umeta:{}'>
+          </u-pagination>
+        </div>
+      </div>
+      <div class="u-form-group">
+        <label for="" class="u-col-2 text-right u-form-label">
+          自定义指令(待完善)
+        </label>
+        <div class="u-col-10">
+          <label class="label-text" data-bind="ko-currency: $root.model.ref('enterpriseName')">
+
+          </label>
+        </div>
+      </div>
+    </form-ctn>
+  </box-content>
+  <box-content params="title:'使用说明'" id="a2">
+    <div>
+      获取值:app.getComp("id")----id 是对应组件初始化的id <br>
+
+      实际编辑态值会自动保存到model对应字段:参考app.dataTables.model.getCurrentRow().getValue("openTenderType")
+    </div>
+  </box-content>
+</box>
+<script src="http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"></script>
+<script src="//cdn.bootcss.com/knockout/3.4.1/knockout-min.js"></script>
+<script src="http://design.yyuap.com/static/uui/3.1.23/js/u.min.js"></script>
+<script src="http://design.yyuap.com/static/uui/3.1.23/js/u-tree.min.js"></script>
+<script src="./index.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
