@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>example</title>
-    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/latest/css/u.min.css">
-    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/latest/css/tree.min.css">
+    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/3.1.23/css/u.min.css">
+    <link rel="stylesheet" href="http://design.yyuap.com/static/uui/3.1.23/css/tree.min.css">
+    <link rel="shortcut icon" href="https://www.yonyouyc.com/yuncai/favicon.ico">
     <link rel="stylesheet" href="./ko-epui.css">
   <style>
     body{
@@ -51,7 +52,6 @@
     .u-form-group label{
       color: #999;
       line-height: 36px;
-      margin-bottom: 0;
     }
     .u-form-group span{
       color:#333;
@@ -207,71 +207,57 @@
     </state-tabs>
   </box-tabs>
   <box-content params="title: '表单显示'" id="a1">
-    <div class="u-row">
-      <div class="u-form-group" style="">
-        <label for="" class="u-col-2 text-right">tooltip</label>
-        <u-tooltip class="u-col-3" params="option:{title:$root.model.ref('enterpriseName'), placement:'bottom'}">
-          <label for="" data-bind="text:$root.model.ref('enterpriseName')"></label>
-        </u-tooltip>
-      </div>
-      <div class="u-form-group">
-        <label for="" class="u-col-2 text-right u-form-label">带校验输入框</label>
-        <div class="u-col-3">
+    <form-ctn class="u-row" >
+      <form-group params="md:10">
+        <form-title params="md:2,sm:2,xs:4">form-title:</form-title>
+        <form-text params="text:$root.model.ref('enterpriseName'),md:4,sm:4,xs:8"></form-text>
+        <form-title params="text:'row2',md:2,sm:2,xs:4"></form-title>
+        <form-text params="text:'form-title-withparam',md:4,sm:4,xs:8"></form-text>
+        <form-title params="md:2,sm:2,xs:4">tooltip:</form-title>
+        <form-ctn params="md:4,sm:4,xs:8">
+          <u-tooltip params="option:{title:$root.model.ref('enterpriseName'), placement:'bottom'}">
+            <label for="" data-bind="text:$root.model.ref('enterpriseName')"></label>
+          </u-tooltip>
+        </form-ctn>
+
+        <form-title params="md:2,sm:2,xs:4">带校验输入框</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
           <u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">日期选择:</label>
-        <div class="u-col-3">
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">日期选择:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
           <u-datepicker params='vm:{data:$root.model},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">下拉框:</label>
-        <div class="u-col-3">
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">下拉框:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
           <u-select params='vm:{data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
           </u-select>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">switch:</label>
-        <div class="u-col-3">
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">switch:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
           <u-switch params='vm:{data:$root.model},umeta:{"field":"switch"}'>
           </u-switch>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">checkbox:</label>
-        <div class="u-col-3">
-          <u-checkbox params='vm:{data:$root.model,datasource:$root.checkboxData},umeta:{"id":"c1","field":"checkbox"}'>
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">checkbox:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <u-checkbox class="checkbox-inline" params='vm:{data:$root.model,datasource:$root.checkboxData},umeta:{"id":"c1","field":"checkbox"}'>
           </u-checkbox>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">radio:</label>
-        <div class="u-col-3">
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">radio:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
           <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r1","field":"radio"}'>
           </u-radio>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">radio:</label>
-        <div class="u-col-3">
+        </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">radio2:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
           <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r2","field":"radio"}'>
           </u-radio>
-        </div>
-      </div>
-      <div class="u-form-group">
-        <label class="u-col-2 text-right u-form-label">radio:</label>
-        <div class="u-col-3">
-          <u-radio params='vm:{data:$root.model,datasource:$root.radiodata},umeta:{"id":"r3","field":"radio"}'>
-          </u-radio>
-        </div>
-      </div>
+        </form-ctn>
+      </form-group>
       <div class="u-form-group">
         <label class="u-col-2 text-right u-form-label">textarea:</label>
         <div class="u-col-3">
-          <textarea class="u-form-control" data-bind="value:$root.model.enterpriseName"></textarea>
+          <textarea class="u-form-control" data-bind="value:$root.model.ref('enterpriseName')"></textarea>
         </div>
       </div>
       <div class="u-form-group">
@@ -307,8 +293,17 @@
           </u-pagination>
         </div>
       </div>
-    </div>
-    </div>
+      <div class="u-form-group">
+        <label for="" class="u-col-2 text-right u-form-label">
+          自定义指令(待完善)
+        </label>
+        <div class="u-col-10">
+          <label class="label-text" data-bind="ko-currency: $root.model.ref('enterpriseName')">
+
+          </label>
+        </div>
+      </div>
+    </form-ctn>
   </box-content>
   <box-content params="title:'使用说明'" id="a2">
     <div>
@@ -318,10 +313,13 @@
     </div>
   </box-content>
 </box>
+<div>
+
+</div>
 <script src="http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"></script>
 <script src="//cdn.bootcss.com/knockout/3.4.1/knockout-min.js"></script>
-<script src="http://design.yyuap.com/static/uui/latest/js/u.js"></script>
-<script src="http://design.yyuap.com/static/uui/latest/js/u-tree.min.js"></script>
+<script src="http://design.yyuap.com/static/uui/3.1.23/js/u.min.js"></script>
+<script src="http://design.yyuap.com/static/uui/3.1.23/js/u-tree.min.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

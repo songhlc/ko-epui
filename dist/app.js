@@ -1,7 +1,18 @@
 var viewModel = {
+  sizechange: function () {
+    console.log('hello')
+  },
   id: ko.observable(''),
+  test: ko.observable('ggg'),
   save: function (msg) {
-    window.alert('save me')
+    let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
+    if (validator.passed) {
+      window.alert('save me')
+    } else {
+      for (let i = 0; i < validator.notPassedArr.length; i++) {
+        validator.notPassedArr[i].comp.doValidate()
+      }
+    }
   },
   statuItems: ko.observableArray([
     {
@@ -24,6 +35,43 @@ var viewModel = {
   statusChange (status) {
     console.log(status)
   },
+  paginationmodel: new window.u.DataTable({
+    meta: {
+      'id': '',
+      'name': ''
+    }
+  }),
+  // 树形模型
+  treemodel: new window.u.DataTable({
+    meta: {
+      'id': {
+        'value': ''
+      },
+      'pid': {
+        'value': ''
+      },
+      'title': {
+        'value': ''
+      }
+    }
+  }),
+  treeOption: {
+    callback: {
+      beforeClick: function (treeId, treeNode, clickFlag) {
+        console.log('before click')
+        console.log(treeId)
+        console.log(treeNode)
+        console.log(clickFlag)
+      },
+      onClick: function (event, treeId, treeNode, clickFlag) {
+        console.log('on click')
+        console.log(event)
+        console.log(treeId)
+        console.log(treeNode)
+        console.log(clickFlag)
+      }
+    }
+  },
   comboData: [
     {
       name: '公开招标',
@@ -44,6 +92,7 @@ var viewModel = {
   ],
   model: new window.u.DataTable({
     meta: {
+      name: '',
       enterpriseName: '',
       createField: '',
       uyear: '',
@@ -57,23 +106,112 @@ var viewModel = {
       uyearmonth: '',
       ucurrency: {curSymbol: '￥'}
     }
-  })
+  }),
+  sizeChange (obj) {
+    console.log(obj)
+  },
+  pageChange (obj) {
+    console.log(obj)
+  }
 }
-viewModel.model.setSimpleData({
-  enterpriseName: '公司名称1',
-  createField: 'test1',
-  uyear: 2016,
-  umonth: 12,
-  switch: 1,
-  checkbox: '1',
-  exceptStartTime: '2015-02-02',
-  createTime: '2016-02-02',
-  purchaseType: '2',
-  radio: '2',
-  uyearmonth: '2016-12',
-  ucurrency: '200.02'
-})
+setTimeout(function () {
+  viewModel.model.setSimpleData({
+    enterpriseName: '公司名称1',
+    createField: 'test1',
+    uyear: 2016,
+    umonth: 12,
+    switch: 1,
+    checkbox: '1',
+    exceptStartTime: '2015-02-02',
+    createTime: '2016-02-02',
+    purchaseType: '2',
+    radio: '2',
+    uyearmonth: '2016-12',
+    ucurrency: '200.02',
+    name: ''
+  })
+}, 100)
+var treedata = [{
+  'id': '01',
+  'pid': 'root',
+  'title': 'f1'
+}, {
+  'id': '02',
+  'pid': 'root',
+  'title': 'f2'
+}, {
+  'id': '101',
+  'pid': '01',
+  'title': 'f11'
+}, {
+  'id': '102',
+  'pid': '01',
+  'title': 'f12'
+}, {
+  'id': '201',
+  'pid': '02',
+  'title': 'f21'
+}]
+viewModel.treemodel.removeAllRows()
+viewModel.treemodel.setSimpleData(treedata)
+let paginationData = [
+  {
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  },{
+    id: 1,
+    name: '2'
+  }
+]
+// viewModel.paginationmodel.pageIndex(0)
+viewModel.paginationmodel.pageSize(10)
+viewModel.paginationmodel.totalPages(15)
+viewModel.paginationmodel.setSimpleData(paginationData)
 window.app = window.u.createApp({
   el: 'body',
   model: viewModel
 })
+setTimeout(function () {
+  viewModel.test("ggg2")
+  viewModel.statuItems(
+    [
+      {
+        title: '待收货',
+        state: 1,
+        num: 1
+      },
+      {
+        title: '已收货',
+        state: 2,
+        num: 2
+      },
+      {
+        title: '待收货',
+        state: 3,
+        num: 3
+      }
+    ]
+  )
+  viewModel.index(2)
+}, 1000)

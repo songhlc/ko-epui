@@ -17,7 +17,7 @@
 ## 1.介绍
 
 ko-epui(knockout/kero base enterprise ui component) 基于knockout组件 和 [kero](http://tinper.org/dist/kero/index.html)封装的ui组件。依赖于knockout 和kero
-
+- 我们的目标:不写css
 - 更优雅的自定义标签写法,更好的语义化
 ```
 date日期组件
@@ -57,12 +57,12 @@ date日期组件
 
 ## 2.安装
 ```
-npm install ko-epui
+yarn install ko-epui
 ```
 
 查看项目示例,下载本工程后运行
 ```
-npm install
+yarn install
 npm run dev
 ```
 访问http://localhost:8084即可
@@ -177,20 +177,26 @@ window.app = window.u.createApp({
 - u-tree
 - pagination
 - sticky-box 吸顶菜单
+- form-group, form-title, form-ctn, form-text
 
 计划完成组件
+- message组件
+- tipdialog组件
+- advanceSearch 高级查询组件
 - u-grid (会进行结合datatable的深度封装，不推荐一般用户使用)
 - u-time /*新增更好的time实现*/
 - u-input
 - validate-input
 - fileupload
 - datetime
+- 增加自定义指令的支持
 
 ### 5.多页面应用脚手架
 
 敬请期待
 
 ### 6.更新日志
+- 2017-03-13 v2.0.2 调整组件结构,增加自定义指令的支持,增加form组价的支持,添加inline-checkbox 支持checkbox值在同一行显示
 - 2017-03-10 v1.5.1 新增box-sticky 吸顶菜单组件
 - 2017-02-27 v1.4.3 新增pagination组件
 - 2017-02-16 v1.4.2 修复radio bug

@@ -17,10 +17,11 @@ function init (params) {
   //
   if (window.addEventListener) {
     window.addEventListener('scroll', scroller, false)
-    window.addEventListener('resize', resizer, false)
+    // TODO 浏览器窗口resize的时候也需要重新计算
+    // window.addEventListener('resize', resizer, false)
   } else if (window.attachEvent) {
     window.attachEvent('onscroll', scroller)
-    window.attachEvent('onresize', resizer)
+    // window.attachEvent('onresize', resizer)
   }
   setTimeout(scroller, 0)
   stickyElement.delegate('.sticky-anchor', 'click', function () {
@@ -105,8 +106,4 @@ function scroller () {
     }
   }
 }
-function resizer () {
-
-}
-
 export default init

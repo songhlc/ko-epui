@@ -1,12 +1,14 @@
 /* eslint-disable */
-import 'src/index.less'
+
 import 'src/index'
+import 'src/index.less'
 /* global ko */
 var viewModel = {
   sizechange: function () {
     console.log('hello')
   },
   id: ko.observable(''),
+  test: ko.observable('ggg'),
   save: function (msg) {
     let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
     if (validator.passed) {
@@ -196,6 +198,7 @@ window.app = window.u.createApp({
   model: viewModel
 })
 setTimeout(function () {
+  viewModel.test("ggg2")
   viewModel.statuItems(
     [
       {

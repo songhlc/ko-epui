@@ -1,3 +1,8 @@
+@basecolor: #3e9ed3;
+@lightcolor: #999;
+@darkcolor: #333;
+@normalcolor: #666;
+
 *{
   box-sizing: border-box;
 }
@@ -44,22 +49,50 @@ body{
   font-size: 14px;
 }
 .u-form-control{
-  ine-height: 36px;
+  line-height: 36px;
   :focus {
-    border-color: #3e9ed3 !important;
+    border-color: @basecolor !important;
     outline: 0;
   }
 }
-@import './box/index.less';
-@import './box-tabs/index.less';
-@import './box-filter/index.less';
-@import './box-content/index.less';
-@import './state-item/index.less';
-@import './u-switch/index.less';
-@import './u-datepicker/index.less';
-@import './u-checkbox/index.less';
-@import './u-radio/index.less';
-@import './query-tabs/index.less';
-@import './state-tabs/index.less';
-@import './u-tree/index.less';
-@import './box-sticky/index.less';
+.tooltip.top .tooltip-arrow{
+  border-top-color: @basecolor;
+}
+.tooltip.left .tooltip-arrow{
+  border-left-color: @basecolor;
+}
+.tooltip.bottom .tooltip-arrow{
+  border-bottom-color: @basecolor;
+}
+.tooltip.right .tooltip-arrow{
+  border-right-color: @basecolor;
+}
+.tooltip .tooltip-inner{
+  background-color: @basecolor;
+}
+.u-form-group .label-text{
+  color: @darkcolor;
+}
+.u-form-group label{
+  color: @lightcolor;
+}
+.checkbox-inline .u-checkbox{
+  width: auto;
+}
+@import 'components/box/index.less';
+@import 'components/box-tabs/index.less';
+@import 'components/box-filter/index.less';
+@import 'components/box-content/index.less';
+@import 'components/state-item/index.less';
+@import 'components/u-switch/index.less';
+@import 'components/u-datepicker/index.less';
+@import 'components/u-checkbox/index.less';
+@import 'components/u-radio/index.less';
+@import 'components/query-tabs/index.less';
+@import 'components/state-tabs/index.less';
+@import 'components/u-tree/index.less';
+@import 'components/box-sticky/index.less';
+@import 'components/u-grid/index.less';
+@import 'components/form-ctn/index.less';
+@import 'components/form-text/index.less';
+@import 'components/form-title/index.less';
