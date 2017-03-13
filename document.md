@@ -43,7 +43,54 @@ npm run dev
 
 ```
 
-## 1.3 u-tree
+
+# 2.控件
+## 2.1 u-input 普通输入框组件
+```
+<u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
+//type可以是string integer float等等 可以参考 [kero校验规则设置](http://tinper.org/dist/kero/docs/validateapi.html)
+
+//保存方法前进行校验
+save: function (msg) {
+    let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
+    if (validator.passed) {
+      window.alert('save me')
+    } else {
+      for (let i = 0; i < validator.notPassedArr.length; i++) {
+        validator.notPassedArr[i].comp.doValidate()
+      }
+    }
+  }
+
+```
+## 2.2 box-sticky 吸顶菜单组件
+```
+<box-sticky params="title:'吸顶菜单'">
+    <div class="u-col-8 text-center">
+      <a href="#a1" class="sticky-anchor active">表单显示</a>
+      <a href="#a2" class="sticky-anchor">使用说明</a>
+    </div>
+    <div class="u-col-2">
+      <button class="pull-right">btn</button>
+    </div>
+</box-sticky>
+```
+
+## 2.3 u-pagination 分页组件
+```
+//数据,事件使用params选项进行绑定,属性使用umeta进行绑定
+<u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}'>
+           </u-pagination>
+
+//分页组件特有事件 sizeChange/pageChange 以下函数自定义用以上方式进行绑定
+sizeChange (obj) {
+  console.log(obj)
+},
+pageChange (obj) {
+  console.log(obj)
+}
+```
+## 2.4 u-tree
 需要依赖uui下的css/tree.min.css 和 js/u-tree.min.js
 ```
 <u-tree class="form-control" params='vm:{data:$root.treemodel,setting:$root.treeOption},
@@ -82,49 +129,55 @@ viewmodel:{
   }
 }
 ```
-
-## u-input
-```
-<u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
-//type可以是string integer float等等 可以参考 [kero校验规则设置](http://tinper.org/dist/kero/docs/validateapi.html)
-
-//保存方法前进行校验
-save: function (msg) {
-    let validator = window.app.compsValidateMultiParam({element: window.$('body')[0]})
-    if (validator.passed) {
-      window.alert('save me')
-    } else {
-      for (let i = 0; i < validator.notPassedArr.length; i++) {
-        validator.notPassedArr[i].comp.doValidate()
-      }
-    }
-  }
+# 3.表单组件
 
 ```
-## box-sticky
-```
-<box-sticky params="title:'吸顶菜单'">
-    <div class="u-col-8 text-center">
-      <a href="#a1" class="sticky-anchor active">表单显示</a>
-      <a href="#a2" class="sticky-anchor">使用说明</a>
-    </div>
-    <div class="u-col-2">
-      <button class="pull-right">btn</button>
-    </div>
-</box-sticky>
+/*
+* 表单组件通用样式,用于做自适应布局
+* params:{
+*   md: 4   // form-group一共占据几列 默认按照栅格化布局来 相当于设置样式u-col-4 不设置和md的效果一样
+*   sm: 3   // 相当于样式u-col-sm-3
+*   xs: 12  // 相当于设置u-col-xs-12
+*   lg: 6  //相当于设置u-col-lg-6
+* }
+*
+* */
+
 ```
 
-## u-pagination
+## 3.1 form-group 表单组根容器
 ```
-//数据,事件使用params选项进行绑定,属性使用umeta进行绑定
-<u-pagination params='vm: {data: $root.paginationmodel, sizeChange: $root.sizeChange, pageChange: $root.pageChange}'>
-           </u-pagination>
+ <form-group params="md:10">
+ </form-group>
+```
 
-//分页组件特有事件 sizeChange/pageChange 以下函数自定义用以上方式进行绑定
-sizeChange (obj) {
-  console.log(obj)
-},
-pageChange (obj) {
-  console.log(obj)
-}
+## 3.2 form-title 字段名称
+```
+<form-group params="md:10">
+  <form-title params="md:2,sm:4,xs:6">姓名</form-title>
+ </form-group>
 
+//动态数据
+<form-group params="md:10">
+  <form-title params="text:$root.model.ref('name'),md:2,sm:4,xs:6"></form-title>
+ </form-group>
+```
+
+## 3.3 form-text 字段值 通常在详细页面配合form-title使用
+```
+<form-group params="md:10">
+  <form-title params="md:2,sm:4,xs:6">姓名</form-title>
+  <form-text params="text:$root.model.ref('name'),md:2,sm:4,xs:6"></form-text>
+ </form-group>
+```
+
+## 3.4 form-ctn 通常配合其他输入控件以及form-title使用
+```
+<form-group params="md:10">
+  <form-title params="md:2,sm:4,xs:6">姓名</form-title>
+  <form-ctn params="md:2,sm:4,xs:6">
+    <input data-bind="value:$root.model.ref('customvalue')"/>
+  </form-ctn>
+</form-group>
+
+```
