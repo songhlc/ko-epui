@@ -10,6 +10,7 @@ var viewModel = {
   query () {
     alert("me!")
   },
+  q: ko.observable('testme'),
   id: ko.observable(''),
   test: ko.observable('ggg'),
   save: function (msg) {
