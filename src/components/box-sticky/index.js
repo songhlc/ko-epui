@@ -39,8 +39,23 @@ function init (params) {
     }
   })
 }
-
+var anchor = null
+var anchorlist = []
 function scroller () {
+  // 如果不存在元素
+  if (!anchor) {
+    anchor = $('.sticky-anchor')
+    anchor.each(function () {
+      anchorlist.push($(this).attr('href'))
+    })
+  }
+  anchorlist.forEach(function (item) {
+    let pos = $(item).offset().top - $('body').scrollTop()
+    if (pos - document.body.clientHeight / 2 < 50) {
+      $('.sticky-anchor').removeClass('active')
+      $('.sticky-anchor[href="' + item + '"]').addClass('active')
+    }
+  })
   // update height in case of dynamic content
   o.stickyWrapper.css('height', o.stickyElement.outerHeight())
   let scrollTop = $(window).scrollTop()
