@@ -51,9 +51,12 @@ function scroller () {
   }
   anchorlist.forEach(function (item) {
     let pos = $(item).offset().top - $('body').scrollTop()
+    // 确保滚轮滚动时 会定位到相应的选项
     if (pos - document.body.clientHeight / 2 < 50) {
-      $('.sticky-anchor').removeClass('active')
-      $('.sticky-anchor[href="' + item + '"]').addClass('active')
+      if (!($('.sticky-anchor[href="' + item + '"]').hasClass('active'))) {
+        $('.sticky-anchor').removeClass('active')
+        $('.sticky-anchor[href="' + item + '"]').addClass('active')
+      }
     }
   })
   // update height in case of dynamic content
