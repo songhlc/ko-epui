@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="http://design.yyuap.com/static/uui/3.1.23/css/u.min.css">
     <link rel="stylesheet" href="http://design.yyuap.com/static/uui/3.1.23/css/tree.min.css">
     <link rel="shortcut icon" href="https://www.yonyouyc.com/yuncai/favicon.ico">
+    <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./ko-epui.css">
   <style>
     body{
@@ -200,6 +201,8 @@
       <button class="btn btn-primary btn-sm  m-r-sm" data-bind="click:$root.save"><span class="fa fa-save"></span>&nbsp;保存</button>
       <a href="#" class="btn btn-outline btn-sm m-r-sm"><span class="fa fa-reply"></span>&nbsp;返回</a>
     </div>
+  </box-filter>
+  <box-filter params="title: '查询title', q: $root.q, query:$root.query">
   </box-filter>
   <box-tabs>
     <state-tabs params="items: $root.statuItems, handler: $root.statusChange, index:$root.index">

@@ -7,6 +7,9 @@ var viewModel = {
   sizechange: function () {
     console.log('hello')
   },
+  query () {
+    alert("me!")
+  },
   id: ko.observable(''),
   test: ko.observable('ggg'),
   save: function (msg) {
