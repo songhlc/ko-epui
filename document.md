@@ -181,3 +181,17 @@ viewmodel:{
 </form-group>
 
 ```
+## 3.5 submit组件 提供防止多次重复点击的问题 默认debouce 400ms
+```
+/*
+* params:{
+     click: ** //click function
+     text: ** //button text
+     debounce: 300 // default 300ms
+     maxWait: 1000 // default 1000ms
+  }
+  //实际使用lodash.debounce
+*
+*/
+<submit params="click:$root.forbitRepeatClick,text:'防止重复提交'"></submit>
+```

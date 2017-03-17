@@ -198,10 +198,14 @@
   </box-sticky>
   <box-filter params="title: '编辑页面'" style="margin-top:20px">
     <div class="pull-right">
-      <button class="btn btn-primary btn-sm  m-r-sm" data-bind="click:$root.save"><span class="fa fa-save"></span>&nbsp;保存</button>
+      <submit params="click:$root.forbitRepeatClick,text:'防止重复提交'"></submit>
+      <button class="btn btn-primary btn-sm m-r-sm" data-bind="click:$root.save"><span class="fa fa-save"></span>&nbsp;保存</button>
       <a href="#" class="btn btn-outline btn-sm m-r-sm"><span class="fa fa-reply"></span>&nbsp;返回</a>
     </div>
   </box-filter>
+  <div>
+
+  </div>
   <box-filter params="title: '查询title', q: $root.q, query:$root.query">
   </box-filter>
   <box-tabs>

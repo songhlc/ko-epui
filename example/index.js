@@ -23,6 +23,9 @@ var viewModel = {
       }
     }
   },
+  forbitRepeatClick: function () {
+    console.log("click out side")
+  },
   statuItems: ko.observableArray([
     {
       title: '待收货',

@@ -1,7 +1,7 @@
 import './index.less'
 /* global ko */
 // 组件列表
-const normalcomplist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'state-tabs', 'box-sticky']
+const normalcomplist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'state-tabs', 'box-sticky', 'submit']
 // iuap 组件
 const createcomplist = ['u-datepicker', 'u-select', 'u-switch', 'u-checkbox', 'u-radio', 'u-year', 'u-month', 'u-yearmonth', 'u-currency', 'u-tree', 'u-input', 'u-tooltip', 'u-pagination', 'form-group', 'form-title', 'form-text', 'form-ctn']
 // 自定义指令
