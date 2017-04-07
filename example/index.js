@@ -116,7 +116,8 @@ var viewModel = {
       radio: {type: 'Boolean'},
       umonth: '',
       uyearmonth: '',
-      ucurrency: {curSymbol: '￥'}
+      ucurrency: {curSymbol: '￥'},
+      selectdata: ''
     }
   }),
   sizeChange (obj) {
@@ -140,7 +141,8 @@ setTimeout(function () {
     radio: '2',
     uyearmonth: '2016-12',
     ucurrency: '200.02',
-    name: ''
+    name: '',
+    selectdata: ''
   })
 }, 100)
 var treedata = [{

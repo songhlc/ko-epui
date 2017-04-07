@@ -197,6 +197,7 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
+- 2017-04-07 v2.0.7 u-select 组件增加placeholder参数 see document
 - 2017-03-17 v2.0.6 增加submit按钮组件,支持防止连续点击重复提交
 - 2017-03-13 v2.0.2 调整组件结构,增加自定义指令的支持,增加form组价的支持,添加inline-checkbox 支持checkbox值在同一行显示
 - 2017-03-10 v1.5.1 新增box-sticky 吸顶菜单组件

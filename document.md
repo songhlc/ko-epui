@@ -129,6 +129,20 @@ viewmodel:{
   }
 }
 ```
+## 2.5 u-select
+
+普通下拉框组件,依赖uui的select
+```
+<u-select params='vm:
+    {
+      placeholder: "please select me", //placeholder
+      data:$root.model,  //数据源
+      datasource: $root.comboData  //下拉列表
+    },
+    umeta:{"field":"test"}'>
+</u-select>
+```
+
 # 3.表单组件
 
 ```

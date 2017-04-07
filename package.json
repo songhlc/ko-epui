@@ -1,6 +1,6 @@
 {
   "name": "ko-epui",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "ui components for enterprise webapplication base on konckout and kero",
   "main": "dist/index.js",
   "scripts": {

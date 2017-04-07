@@ -4,7 +4,7 @@ var config = require('./webpack.base.config'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
 var merge = require('webpack-merge')
 config.entry = path.resolve(__dirname, '../') + '/example/index.js'
-config.devtool = 'eval-source-map'
+config.devtool = 'inline-source-map'
 config = merge(config, {
   plugins: [
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
