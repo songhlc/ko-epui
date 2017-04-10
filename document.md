@@ -137,10 +137,23 @@ viewmodel:{
     {
       placeholder: "please select me", //placeholder
       data:$root.model,  //数据源
-      datasource: $root.comboData  //下拉列表
+      datasource: $root.comboData  //下拉列表,
+      iconCls: 'uf uf-icon' //自定义样式
     },
     umeta:{"field":"test"}'>
 </u-select>
+```
+## 2.6 u-datepicker
+
+日期组件,依赖uui的datepicker
+```
+<u-datepicker params='
+  vm:{
+    iconCls:"uf uf-triangle-down",
+    placeholder:"请选择日期",
+    data:$root.model
+  },
+  umeta:{"id":"udatetime223","field":"exceptEndTime","startField":"exceptStartTime"}'></u-datepicker>
 ```
 
 # 3.表单组件

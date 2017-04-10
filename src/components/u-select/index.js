@@ -1,14 +1,9 @@
 /* iuap select(dropdown) */
-import {CreatApp} from '../base'
+import {CreatApp, CustomIconCls} from '../base'
 function createDropdown (params, componentInfo) {
   let umeta = {'type': 'u-combobox'}
-  let dom = componentInfo.element.children[0]
-  if (params.vm) {
-    if (params.vm.placeholder) {
-      let element = dom.getElementsByTagName('input')[0]
-      element.attributes.placeholder.nodeValue = params.vm.placeholder
-    }
-  }
+  // 自定义样式
+  CustomIconCls(params, componentInfo, 'span')
   CreatApp(componentInfo, umeta, params)
 }
 export default createDropdown

@@ -235,13 +235,17 @@
         <form-ctn params="md:4,sm:4,xs:4">
           <u-datepicker params='vm:{data:$root.model},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
         </form-ctn>
+        <form-title params="md:2,sm:4,xs:4">待placeholder的日期:</form-title>
+        <form-ctn params="md:4,sm:4,xs:8">
+          <u-datepicker params='vm:{iconCls:"uf uf-triangle-down",placeholder:"请选择日期",data:$root.model},umeta:{"id":"udatetime223","field":"exceptEndTime","startField":"exceptStartTime"}'></u-datepicker>
+        </form-ctn>
         <form-title params="md:2,sm:2,xs:4">下拉框:</form-title>
         <form-ctn params="md:4,sm:4,xs:4">
-          <u-select params='vm:{data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
+          <u-select params='vm:{iconCls:"uf uf-triangle-down",data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
           </u-select>
         </form-ctn>
         <form-title params="md:2,sm:4,xs:4">带placeholder下拉框:</form-title>
-        <form-ctn params="md:10,sm:8,xs:8">
+        <form-ctn params="md:4,sm:4,xs:8">
           <u-select params='vm:{placeholder: "please select me", data:$root.model,datasource: $root.comboData},umeta:{"field":"selectdata"}'>
           </u-select>
         </form-ctn>

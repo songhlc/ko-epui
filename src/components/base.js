@@ -5,6 +5,13 @@ export function CreatApp (componentInfo, umeta, params) {
   if (!uMeta.data) {
     uMeta.data = 'data'
   }
+  // 对于输入框统一添加placeholder
+  if (params.vm) {
+    if (params.vm.placeholder) {
+      let element = dom.getElementsByTagName('input')[0]
+      element.attributes.placeholder.nodeValue = params.vm.placeholder
+    }
+  }
   // 适配datasource(checkbox radiobox select)
   if (params.vm && params.vm.datasource) {
     uMeta.datasource = 'datasource'
@@ -21,4 +28,15 @@ export function CreatApp (componentInfo, umeta, params) {
   }
 
   window.app.createComp(dom, vm)
+}
+export function CustomIconCls (params, componentInfo, customTag) {
+  // 添加自定义样式支持
+  if (params.vm) {
+    if (params.vm.iconCls) {
+      let dom = componentInfo.element.children[0]
+      let element = dom.getElementsByTagName(customTag)[0]
+      let nodeCls = params.vm.iconCls.indexOf('uf') >= 0 ? (params.vm.iconCls + ' u-form-control-feedback') : params.vm.iconCls
+      element.attributes.class.nodeValue = nodeCls
+    }
+  }
 }
