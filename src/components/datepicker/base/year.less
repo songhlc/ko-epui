@@ -1,0 +1,39 @@
+.year-ctn{
+  .year-header{
+    .last10year{
+      width: 18%;
+      text-align: left;
+      display: inline-block;
+    }
+    .cur10year{
+      width: 60%;
+      text-align: center;
+      display: inline-block;
+    }
+    .next10year{
+      width: 18%;
+      text-align: right;
+      display: inline-block;
+    }
+  }
+  .year-body{
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    td{
+      padding: 20px 3px;
+      cursor: pointer;
+      div {
+        line-height: 32px;
+        width: 48px;
+        height: 32px;
+      }
+      div:hover {
+        background-color: #e4e8f1;
+      }
+    }
+    .selected-year div{
+      background-color: blue;
+    }
+  }
+}

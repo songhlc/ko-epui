@@ -1,0 +1,23 @@
+<div class="day-ctn">
+  <div class="day-header">
+
+  </div>
+  <table class="day-body">
+    <tr>
+      <td>日</td>
+      <td>一</td>
+      <td>二</td>
+      <td>三</td>
+      <td>四</td>
+      <td>五</td>
+      <td>六</td>
+    </tr>
+    <!-- ko foreach: { data: rows(), as: 'row' } -->
+    <tr data-bind="foreach: { data: row, as: 'cell' }">
+      <td>
+         <div data-bind="text:cell.text"></div>
+      </td>
+    </tr>
+    <!-- /ko -->
+  </table>
+</div>

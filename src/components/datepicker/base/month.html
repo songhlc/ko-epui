@@ -1,0 +1,56 @@
+<div class="month-ctn">
+  <div class="month-header">
+    <div class="lastyear" data-bind="click: lastyear"><<</div>
+    <div class="curyear">
+      <span data-bind="text:year"></span>
+    </div>
+    <div class="nextyear" data-bind="click: nextyear">>></div>
+  </div>
+  <table class="month-body">
+    <tbody>
+    <tr>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(1)}">一月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(2)}">二月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(3)}">三月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(4)}">四月</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(5)}">五月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(6)}">六月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(7)}">七月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(8)}">八月</div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(9)}">九月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(10)}">十月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(11)}">十一月</div>
+      </td>
+      <td>
+        <div class="cell" data-bind="click:function(){handleMonthClick(12)}">十二月</div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

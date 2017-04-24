@@ -45,7 +45,8 @@ var viewModel = {
   ]),
   index: ko.observable(0),
   statusChange (status) {
-    console.log(status)
+    debugger
+    console.log(status+this.index())
   },
   paginationmodel: new window.u.DataTable({
     meta: {

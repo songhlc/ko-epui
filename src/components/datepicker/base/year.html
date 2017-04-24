@@ -1,0 +1,29 @@
+<div class="year-ctn">
+  <div class="year-header">
+    <div class="last10year" data-bind="click: last10year"><<</div>
+    <div class="cur10year">
+      <span data-bind="text:startyear"></span>
+      <span>-</span>
+      <span data-bind="text:startyear() + 9"></span>
+    </div>
+    <div class="next10year" data-bind="click: next10year">>></div>
+  </div>
+  <table class="year-body">
+    <tr>
+      <td class="available"><div class="cell" data-bind="text: startyear,click:function(){handleYearClick(0)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 1,click:function(){handleYearClick(1)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 2,click:function(){handleYearClick(2)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 3,click:function(){handleYearClick(3)}"></div></td>
+    </tr>
+    <tr>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 4,click:function(){handleYearClick(4)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 5,click:function(){handleYearClick(5)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 6,click:function(){handleYearClick(6)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 7,click:function(){handleYearClick(7)}"></div></td>
+    </tr>
+    <tr>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 8,click:function(){handleYearClick(8)}"></div></td>
+      <td class="available"><div class="cell" data-bind="text: startyear() + 9,click:function(){handleYearClick(9)}"></div></td>
+    </tr>
+  </table>
+</div>
