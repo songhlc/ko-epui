@@ -1,5 +1,13 @@
+@basecolor: #3e9ed3;
 .year-ctn{
   .year-header{
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
     .last10year{
       width: 18%;
       text-align: left;
@@ -21,6 +29,7 @@
     padding: 15px;
     text-align: center;
     td{
+
       padding: 20px 3px;
       cursor: pointer;
       div {
@@ -30,6 +39,14 @@
       }
       div:hover {
         background-color: #e4e8f1;
+      }
+      &.curry div{
+        background-color: @basecolor;
+        color: #FFF;
+      }
+      &.curry div:hover{
+        background-color: @basecolor;
+        color: #FFF;
       }
     }
     .selected-year div{

@@ -1,16 +1,26 @@
 .datepicker-ctn{
-  position: relative;
+  position: absolute;
   box-shadow: 0 2px 6px #ccc;
   width: 324px;
   height: 330px;
+  top: -100px;
   color: #333;
+  display: none;
+  &.select-date{
+    display: block;
+  }
   .datepicker-footer{
     position: absolute;
-
     background-color: #FFF;
     padding: 10px;
     z-index:1001;
     width: 100%;
+  }
+  .hide{
+    display: none;
+  }
+  .show{
+    display: block;
   }
   .datepicker-mask{
     position: fixed;

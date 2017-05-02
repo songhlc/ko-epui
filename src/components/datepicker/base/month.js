@@ -5,6 +5,8 @@ function init (params) {
   // 选择月份
   this.handleMonthClick = (val) => {
     this.month(val)
+    params.showday(true)
+    params.showmonth(false)
   }
   // 前十年
   this.lastyear = () => {

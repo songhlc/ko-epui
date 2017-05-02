@@ -1,15 +1,18 @@
-<div>
-  <input type="text">
-  <div class="datepicker-ctn">
-
+<div style="position: relative">
+  <div class="inline-block">
+    <input type="text" class="u-form-control" data-bind="{value:data,event:{focus:focus},attr:{'placeholder': placeholder}}">
+  </div>
+  <div class="datepicker-ctn" data-bind="css:{'select-date':isPopup}">
     <div class="datepicker-header">
-
     </div>
     <div class="datepicker-footer">
-      <datepicker-year params="year: year"></datepicker-year>
-      <datepicker-month params="year: year, month: month"></datepicker-month>
-      <datepicker-day params="year: year, month: month, day: day"></datepicker-day>
+      <datepicker-year params="year: year,showmonth:showmonth,showyear:showyear" class="hide" data-bind="css:{'show':showyear}"></datepicker-year>
+      <datepicker-month params="year: year, month: month,showday:showday,showmonth:showmonth, showyear:showyear" class="hide" data-bind="css:{'show':showmonth}"></datepicker-month>
+      <datepicker-day params="data: data,year: year, month: month, day: day,showday:showday, showyear:showyear,showmonth:showmonth" class="hide" data-bind="css:{'show':showday}"></datepicker-day>
+      <div class="datepicer-option">
+        <div class="pull-right" data-bind="click:confirm">确定</div>
+      </div>
     </div>
-    <div class="datepicker-mask"></div>
+    <div class="datepicker-mask" data-bind="click:maskClick"></div>
   </div>
 </div>

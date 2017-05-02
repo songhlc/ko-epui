@@ -10,20 +10,20 @@
   </div>
   <table class="year-body">
     <tr>
-      <td class="available"><div class="cell" data-bind="text: startyear,click:function(){handleYearClick(0)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 1,click:function(){handleYearClick(1)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 2,click:function(){handleYearClick(2)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 3,click:function(){handleYearClick(3)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+0}"><div class="cell" data-bind="text: startyear,click:function(){handleYearClick(0)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+1}"><div class="cell" data-bind="text: startyear() + 1,click:function(){handleYearClick(1)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+2}"><div class="cell" data-bind="text: startyear() + 2,click:function(){handleYearClick(2)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+3}"><div class="cell" data-bind="text: startyear() + 3,click:function(){handleYearClick(3)}"></div></td>
     </tr>
     <tr>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 4,click:function(){handleYearClick(4)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 5,click:function(){handleYearClick(5)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 6,click:function(){handleYearClick(6)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 7,click:function(){handleYearClick(7)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+4}"><div class="cell" data-bind="text: startyear() + 4,click:function(){handleYearClick(4)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+5}"><div class="cell" data-bind="text: startyear() + 5,click:function(){handleYearClick(5)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+6}"><div class="cell" data-bind="text: startyear() + 6,click:function(){handleYearClick(6)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+7}"><div class="cell" data-bind="text: startyear() + 7,click:function(){handleYearClick(7)}"></div></td>
     </tr>
     <tr>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 8,click:function(){handleYearClick(8)}"></div></td>
-      <td class="available"><div class="cell" data-bind="text: startyear() + 9,click:function(){handleYearClick(9)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+8}"><div class="cell" data-bind="text: startyear() + 8,click:function(){handleYearClick(8)}"></div></td>
+      <td class="available" data-bind="css:{curry:year() == startyear()+9}"><div class="cell" data-bind="text: startyear() + 9,click:function(){handleYearClick(9)}"></div></td>
     </tr>
   </table>
 </div>

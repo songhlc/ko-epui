@@ -8,6 +8,7 @@ const clearHours = function (time) {
 }
 
 function init (params) {
+  let that = this
   this.month = params.month
   this.year = params.year
   this.day = params.day
@@ -19,18 +20,61 @@ function init (params) {
     return getStartDateOfMonth(this.year(), this.month())
   }, this)
   this.disabledDate = {}
-  // 选择月份
-  this.handleDayClick = (val) => {
-    this.day(val)
-  }
+
   this.showWeekNumber = false
   this.offsetDay = ko.computed(function () {
     const week = this.firstDayOfWeek()
     // 周日为界限，左右偏移的天数，3217654 例如周一就是 -1，目的是调整前两行日期的位置
     return week > 3 ? 7 - week : -week
   }, this)
+  // 选择日期
+  this.handleDayClick = function (val) {
+    this.day(val)
+    params.data((new Date(this.year(), this.month() - 1, this.day())).Format('yyyy-MM-dd'))
+  }
+  // 判断是否当前天
+  this.isSelectedDay = (cellType, cellDay) => {
+    if (cellType === 'normal') {
+      var _date = new Date(params.data())
+      if (cellDay === this.day() && this.month() === (_date.getMonth() + 1) && this.year() === (_date.getFullYear())) {
+        return true
+      }
+    } else {
+      return false
+    }
+  }
+  // 年份选择
+  this.chooseyear = function () {
+    params.showyear(true)
+    params.showday(false)
+  }
+  // 月份选择
+  this.choosemonth = function () {
+    params.showmonth(true)
+    params.showday(false)
+  }
+  this.lastyear = () => {
+    this.year(this.year() - 1)
+    this.showday()
+  }
+  this.lastmonth = () => {
+    this.month(this.month() - 1)
+    this.showday()
+  }
+  this.nextyear = () => {
+    this.year(this.year() + 1)
+    this.showday()
+  }
+  this.nextmonth = () => {
+    this.month(this.month() - 1)
+    this.showday()
+  }
+  this.showday = () => {
+    params.showmonth(false)
+    params.showday(true)
+  }
   this.rows = ko.computed(function () {
-    const date = new Date(this.year(), this.month(), 1)
+    const date = new Date(this.year(), this.month() - 1, 1)
     let day = getFirstDayOfMonth(date) // day of first day
     const dateCountOfMonth = getDayCountOfMonth(date.getFullYear(), date.getMonth())
     const dateCountOfLastMonth = getDayCountOfMonth(date.getFullYear(), (date.getMonth() === 0 ? 11 : date.getMonth() - 1))
@@ -54,6 +98,7 @@ function init (params) {
         if (!cell) {
           cell = { row: i, column: j, type: 'normal', inRange: false, start: false, end: false }
         }
+        cell['$parent'] = that
         cell.type = 'normal'
         const index = i * 7 + j
         const time = startDate.getTime() + DAY_DURATION * (index - offset)
@@ -62,6 +107,7 @@ function init (params) {
         cell.end = this.maxDate && time === clearHours(this.maxDate)
         const isToday = time === now
         if (isToday) {
+          debugger
           cell.type = 'today'
         }
         if (i >= 0 && i <= 1) {
@@ -102,6 +148,7 @@ function init (params) {
         row[end].inRange = isWeekActive
         row[end].end = isWeekActive
       }
+
       rows[i](row)
     }
     rows.firstDayPosition = firstDayPosition

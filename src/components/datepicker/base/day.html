@@ -1,9 +1,16 @@
 <div class="day-ctn">
   <div class="day-header">
-
+    <span class="lastyear" data-bind="click: lastyear"><<</span>
+    <span class="lastmonth" data-bind="click: lastmonth"><</span>
+    <span class="yearandmonth">
+      <span data-bind="text: year() + '年',click: chooseyear"></span>
+      <span data-bind="text: month() + '月',click: choosemonth"></span>
+    </span>
+    <span class="nextmonth" data-bind="click: nextmonth">></span>
+    <span class="nextyear" data-bind="click: nextyear">>></span>
   </div>
   <table class="day-body">
-    <tr>
+    <tr style="color: #bbb;">
       <td>日</td>
       <td>一</td>
       <td>二</td>
@@ -14,7 +21,7 @@
     </tr>
     <!-- ko foreach: { data: rows(), as: 'row' } -->
     <tr data-bind="foreach: { data: row, as: 'cell' }">
-      <td>
+      <td data-bind="click:function(){$parent.handleDayClick(cell.text)},css:{nextmonth:cell.type=='next-month',prevmonth:cell.type=='prev-month',today: cell.type=='today',selectedDay: $parent.isSelectedDay(cell.type, cell.text)}">
          <div data-bind="text:cell.text"></div>
       </td>
     </tr>

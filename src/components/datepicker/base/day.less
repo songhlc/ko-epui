@@ -1,3 +1,11 @@
+.day-header{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
 .day-body {
   padding: 15px;
   width: 100%;
@@ -7,7 +15,39 @@
     text-align: center;
     cursor: pointer;
   }
+  td.prevmonth,td.nextmonth{
+    color: #e4e8f1;
+  }
+  td.curDay{
+    background-color: #1baede;
+    color: #FFF;
+  }
+  td.selectedDay{
+    background-color: #1baede;
+    color: #FFF;
+  }
   td:hover{
     background-color: #e4e8f1;
+  }
+  td.prevmonth:hover,td.nextmonth:hover {
+    background-color: #e4e8f1;
+  }
+  td.selectedDay:hover{
+    background-color: #1baede;
+  }
+  td.normal:hover{
+    background-color: #e4e8f1;
+  }
+}
+.day-header{
+  text-align: center;
+  .lastyear,.lastmonth,.nextyear,.nextmonth{
+    width: 10%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .yearandmonth{
+    width: 50%;
+    display: inline-block;
   }
 }
