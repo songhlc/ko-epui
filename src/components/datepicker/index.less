@@ -6,8 +6,15 @@
   top: -100px;
   color: #333;
   display: none;
+  background-color: #FFF;
   &.select-date{
     display: block;
+  }
+  &.isTimer .datepicer-option{
+    display: block;
+  }
+  .datepicer-option{
+    display: none;
   }
   .datepicker-footer{
     position: absolute;
@@ -15,6 +22,9 @@
     padding: 10px;
     z-index:1001;
     width: 100%;
+    .datepicer-option{
+      cursor:pointer
+    }
   }
   .hide{
     display: none;

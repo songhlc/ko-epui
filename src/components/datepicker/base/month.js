@@ -16,6 +16,11 @@ function init (params) {
   this.nextyear = () => {
     this.year(this.year() + 1)
   }
+  // 年份选择
+  this.chooseyear = function () {
+    params.showyear(true)
+    params.showmonth(false)
+  }
 }
 
 export default init

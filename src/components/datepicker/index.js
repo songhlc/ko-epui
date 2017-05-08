@@ -14,10 +14,11 @@ components.forEach((name) => {
   registComponennt(name)
 })
 
-function init (params) {
+function init ({placeholder, data, isTimer = false}) {
   var that = this
-  this.placeholder = params.placeholder
-  this.data = params.data
+  this.isTimer = isTimer
+  this.placeholder = placeholder
+  this.data = data
   this.year = ko.observable()
   this.month = ko.observable()
   this.day = ko.observable()
@@ -48,7 +49,9 @@ function init (params) {
 
   this.day.subscribe((value) => {
     console.log('parent.subscribe day:' + value)
-    // this.bindModelValue()
+    if (!this.isTimer) {
+      this.bindModelValue()
+    }
   })
   this.isPopup = ko.observable(false)
   // 显示对应输入框

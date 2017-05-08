@@ -58,7 +58,13 @@ function init (params) {
     this.showday()
   }
   this.lastmonth = () => {
-    this.month(this.month() - 1)
+    let curmonth = this.month()
+    if (curmonth === 1) {
+      this.year(this.year() - 1)
+      this.month(12)
+    } else {
+      this.month(this.month() - 1)
+    }
     this.showday()
   }
   this.nextyear = () => {
@@ -66,7 +72,13 @@ function init (params) {
     this.showday()
   }
   this.nextmonth = () => {
-    this.month(this.month() - 1)
+    let curmonth = this.month()
+    if (curmonth === 12) {
+      this.year(this.year() + 1)
+      this.month(1)
+    } else {
+      this.month(this.month() + 1)
+    }
     this.showday()
   }
   this.showday = () => {
