@@ -1,0 +1,32 @@
+<div class="timer-ctn" data-bind="css:{'hidden':!showtimer()}">
+  <div class="timer-header">
+
+  </div>
+  <table class="timer-body">
+    <tr>
+      <td>
+        <div>
+          <div class="fa fa-angle-up" data-bind="click: nexthour, event:{mousedown:nexthourholddown,mouseup:holdup,blur:blur}"></div>
+          <div class="timer" data-bind="text:hour"></div>
+          <div class="fa fa-angle-down" data-bind="click: lasthour"></div>
+        </div>
+      </td>
+      <td>:</td>
+      <td>
+        <div>
+          <div class="fa fa-angle-up" data-bind="click: nextminutes, event:{mousedown:nextminholddown,mouseup:holdup,blur:blur}"></div>
+          <div class="timer" data-bind="text:minutes"></div>
+          <div class="fa fa-angle-down" data-bind="click: lastminutes"></div>
+        </div>
+      </td>
+      <td>:</td>
+      <td>
+        <div>
+          <div class="fa fa-angle-up" data-bind="click: nextseconds, event:{mousedown:nextsecholddown,mouseup:holdup,blur:blur}"></div>
+          <div class="timer" data-bind="text:seconds"></div>
+          <div class="fa fa-angle-down" data-bind="click: lastseconds"></div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+@basecolor: #3e9ed3;
+.timer-ctn{
+  position: absolute;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  background-color: #FFF;
+  padding:20px;
+  .timer-body{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bolder;
+    position: relative;
+    top: 60px;
+    .fa{
+      color: #1baede;
+      font-weight: bolder;
+      font-size: 24px;
+      padding: 5px 20px;
+      cursor: pointer;
+    }
+    .fa:hover{
+      background-color: #eee;
+    }
+    .timer{
+      height: 40px;
+      line-height: 40px;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -khtml-user-select: none; /* Konqueror */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
+    }
+  }
+}

@@ -156,6 +156,13 @@ viewmodel:{
   umeta:{"id":"udatetime223","field":"exceptEndTime","startField":"exceptStartTime"}'></u-datepicker>
 ```
 
+## 2.7 datepicker,datetimepicker组件
+日期组件,不依赖uui
+```
+<datepicker params="placeholder:'请选择日期!',data: $root.model.ref('exceptStartTime')"></datepicker>
+<datetimepicker params="placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datetimepicker>
+```
+
 # 3.表单组件
 
 ```

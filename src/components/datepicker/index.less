@@ -10,10 +10,26 @@
   &.select-date{
     display: block;
   }
-  &.isTimer .datepicer-option{
-    display: block;
+  &.isTimer .datepicker-option .confirmbutton,&.isTimer .datepicker-option .timer-picker{
+    display: inline-block;
   }
-  .datepicer-option{
+  .datepicker-option > div {
+    width: 33.333%;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding: 4px 0px;
+    margin-top: -8px;
+    border-radius: 2px;
+    &:hover{
+      background-color: #eee;
+    }
+    &.confirmbutton:hover{
+      background-color: #1baede;
+      color: #FFF;
+    }
+  }
+  .datepicker-option .confirmbutton,.datepicker-option .timer-picker{
     display: none;
   }
   .datepicker-footer{
@@ -22,7 +38,7 @@
     padding: 10px;
     z-index:1001;
     width: 100%;
-    .datepicer-option{
+    .datepicker-option{
       cursor:pointer
     }
   }

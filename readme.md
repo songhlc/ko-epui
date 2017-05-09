@@ -179,6 +179,7 @@ window.app = window.u.createApp({
 - pagination
 - sticky-box 吸顶菜单
 - form-group, form-title, form-ctn, form-text
+- datepicker,datetimepicker
 
 计划完成组件
 - message组件
@@ -189,7 +190,6 @@ window.app = window.u.createApp({
 - u-input
 - validate-input
 - fileupload
-- datetime
 - 增加自定义指令的支持
 
 ### 5.多页面应用脚手架
@@ -197,6 +197,7 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
+- 2017-05-09 v2.1.0 增加datepicker 和datetimepicker组件
 - 2017-04-10 v2.0.8 u-datepicker增加placeholder,u-select和u-datepicker增加自定义样式iconCls
 - 2017-04-07 v2.0.7 u-select 组件增加placeholder参数 see document
 - 2017-03-17 v2.0.6 增加submit按钮组件,支持防止连续点击重复提交

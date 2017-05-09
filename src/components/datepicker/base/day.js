@@ -30,7 +30,8 @@ function init (params) {
   // 选择日期
   this.handleDayClick = function (val) {
     this.day(val)
-    params.data((new Date(this.year(), this.month() - 1, this.day())).Format('yyyy-MM-dd'))
+    // 切换到其他月份的时候
+    params.data((new Date(this.year(), this.month() - 1, this.day(), params.hour(), params.minutes(), params.seconds())).Format(params.isTimer ? 'yyyy-MM-dd hh:mm:ss' : 'yyyy-MM-dd'))
   }
   // 判断是否当前天
   this.isSelectedDay = (cellType, cellDay) => {

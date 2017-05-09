@@ -137,7 +137,7 @@ setTimeout(function () {
     switch: 1,
     checkbox: '1',
     exceptStartTime: '2015-02-02',
-    createTime: '2016-02-02',
+    createTime: '2016-02-02 01:02:03',
     purchaseType: '2',
     radio: '2',
     uyearmonth: '2016-12',
