@@ -3,6 +3,23 @@
 import 'src/index'
 import 'src/index.less'
 /* global ko */
+var tabs = [
+  {
+    title: '待收货',
+    state: 1,
+    num: 1
+  },
+  {
+    title: '已收货',
+    state: 2,
+    num: 2
+  },
+  {
+    title: '待收货',
+    state: 3,
+    num: 3
+  }
+]
 var viewModel = {
   sizechange: function () {
     console.log('hello')
@@ -26,23 +43,7 @@ var viewModel = {
   forbitRepeatClick: function () {
     console.log("click out side")
   },
-  statuItems: ko.observableArray([
-    {
-      title: '待收货',
-      state: 1,
-      num: 0
-    },
-    {
-      title: '已收货',
-      state: 2,
-      num: 0
-    },
-    {
-      title: '待收货',
-      state: 3,
-      num: 0
-    }
-  ]),
+  statuItems: ko.observableArray(tabs),
   index: ko.observable(0),
   statusChange (status) {
     debugger
@@ -207,26 +208,14 @@ window.app = window.u.createApp({
   el: 'body',
   model: viewModel
 })
+
 setTimeout(function () {
   viewModel.test("ggg2")
+  tabs[0].num = 10
+  // ko 列表监控问题 无法检测到属性改变 除非每个属性都监控
+  viewModel.statuItems([])
   viewModel.statuItems(
-    [
-      {
-        title: '待收货',
-        state: 1,
-        num: 1
-      },
-      {
-        title: '已收货',
-        state: 2,
-        num: 2
-      },
-      {
-        title: '待收货',
-        state: 3,
-        num: 3
-      }
-    ]
+    tabs
   )
   viewModel.index(2)
 }, 1000)
