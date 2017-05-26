@@ -20,6 +20,14 @@ function init ({hour, minutes, seconds, showtimer}) {
       hour(_hour)
     }
   }
+  this.lasthour = () => {
+    let _hour = hour() - 1
+    if (_hour <= 0) {
+      hour(23)
+    } else {
+      hour(_hour)
+    }
+  }
   var timerTimeout
   var innerInterval
   // 小时选择长按
@@ -27,6 +35,13 @@ function init ({hour, minutes, seconds, showtimer}) {
     timerTimeout = setTimeout(() => {
       innerInterval = setInterval(() => {
         this.nexthour()
+      }, 100)
+    }, 200)
+  }
+  this.lasthourholddown = () => {
+    timerTimeout = setTimeout(() => {
+      innerInterval = setInterval(() => {
+        this.lasthour()
       }, 100)
     }, 200)
   }
@@ -38,11 +53,27 @@ function init ({hour, minutes, seconds, showtimer}) {
       }, 50)
     }, 200)
   }
+  // 分钟选择长按
+  this.lastminholddown = () => {
+    timerTimeout = setTimeout(() => {
+      innerInterval = setInterval(() => {
+        this.lastminutes()
+      }, 50)
+    }, 200)
+  }
   // 秒选择长按
   this.nextsecholddown = () => {
     timerTimeout = setTimeout(() => {
       innerInterval = setInterval(() => {
         this.nextseconds()
+      }, 50)
+    }, 200)
+  }
+  // 秒选择长按
+  this.lastsecholddown = () => {
+    timerTimeout = setTimeout(() => {
+      innerInterval = setInterval(() => {
+        this.lastseconds()
       }, 50)
     }, 200)
   }
@@ -55,14 +86,6 @@ function init ({hour, minutes, seconds, showtimer}) {
     clearTimeout(timerTimeout)
   }
 
-  this.lasthour = () => {
-    let _hour = hour() - 1
-    if (_hour <= 0) {
-      hour(23)
-    } else {
-      hour(_hour)
-    }
-  }
   this.nextminutes = () => {
     let _minutes = minutes() + 1
     if (_minutes >= 60) {

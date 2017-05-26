@@ -15,8 +15,9 @@ components.forEach((name) => {
 })
 const DATEFORMAT = 'yyyy-MM-dd'
 const DATETIMEFORMAT = 'yyyy-MM-dd hh:mm:ss'
-function init ({placeholder, data, isTimer = false}) {
+function init ({placeholder, data, isTimer = false, lang = 'zh'}) {
   var that = this
+  this.lang = lang
   this.isTimer = isTimer
   this.placeholder = placeholder
   this.data = data
