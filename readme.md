@@ -197,6 +197,7 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 6.更新日志
+- 2015-05-24 v2.1.2 修改submit组件，添加更好的防重复提价机制
 - 2017-05-09 v2.1.0 增加datepicker 和datetimepicker组件
 - 2017-04-10 v2.0.8 u-datepicker增加placeholder,u-select和u-datepicker增加自定义样式iconCls
 - 2017-04-07 v2.0.7 u-select 组件增加placeholder参数 see document
