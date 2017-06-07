@@ -1,17 +1,37 @@
 import './index.less'
 import '../util'
 /* global ko */
-function registComponennt (name) {
-  ko.components.register('datepicker-' + name, {
-    viewModel: require('./base/' + name).default,
-    // template: { fromUrl: name},
-    template: require('./base/' + name + '.html')
-  })
-}
-// let components = ['date', 'year', 'month']
-let components = ['year', 'month', 'day', 'timer']
-components.forEach((name) => {
-  registComponennt(name)
+// function registComponennt (name) {
+//   ko.components.register('datepicker-' + name, {
+//     viewModel: require('./base/' + name).default,
+//     // template: { fromUrl: name},
+//     template: require('./base/' + name + '.html')
+//   })
+// }
+// // let components = ['date', 'year', 'month']
+// let components = ['year', 'month', 'day', 'timer']
+// components.forEach((name) => {
+//   registComponennt(name)
+// })
+
+ko.components.register('datepicker-year', {
+  viewModel: require('./base/year').default,
+  template: require('./base/year.html')
+})
+
+ko.components.register('datepicker-month', {
+  viewModel: require('./base/month').default,
+  template: require('./base/month.html')
+})
+
+ko.components.register('datepicker-day', {
+  viewModel: require('./base/day').default,
+  template: require('./base/day.html')
+})
+
+ko.components.register('datepicker-timer', {
+  viewModel: require('./base/timer').default,
+  template: require('./base/timer.html')
 })
 const DATEFORMAT = 'yyyy-MM-dd'
 const DATETIMEFORMAT = 'yyyy-MM-dd hh:mm:ss'
