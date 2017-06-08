@@ -35,6 +35,16 @@ ko.components.register('datepicker-timer', {
 })
 const DATEFORMAT = 'yyyy-MM-dd'
 const DATETIMEFORMAT = 'yyyy-MM-dd hh:mm:ss'
+// 获取元素距离窗口左侧距离
+const getElementLeft = function (element) {
+  var actualLeft = element.offsetLeft
+  var current = element.offsetParent
+  while (current !== null) {
+    actualLeft += current.offsetLeft
+    current = current.offsetParent
+  }
+  return actualLeft
+}
 function init ({placeholder, data, isTimer = false, lang = 'zh'}) {
   var that = this
   this.lang = lang
@@ -105,8 +115,23 @@ function init ({placeholder, data, isTimer = false, lang = 'zh'}) {
   this.showmonth = ko.observable(false)
   this.showday = ko.observable(true)
   this.showtimer = ko.observable(false)
+
+  this.alignright = ko.observable(false)
   // 选中输入框
-  this.focus = () => {
+  this.focus = (data, event) => {
+    let leftPosition = getElementLeft(event.target)
+    // 获取viewport 宽度
+    let screenWidth = document.documentElement.clientWidth
+    try {
+      // 如果元素距离右侧的距离小于280 则将弹出浮动款左移，设置right：0
+      if (screenWidth - leftPosition < 280) {
+        this.alignright(true)
+      } else {
+        this.alignright(false)
+      }
+    } catch (e) {
+      console.error(e)
+    }
     this.isPopup(true)
     this.showyear(false)
     this.showmonth(false)

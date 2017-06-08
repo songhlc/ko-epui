@@ -231,14 +231,14 @@
         <form-ctn params="md:4,sm:4,xs:4">
           <u-input params='vm:{data:$root.model},umeta:{"id":"require","required":"true","type":"string","field":"name","nullMsg":"带校验输入框不能为空"}'></u-input>
         </form-ctn>
-        <form-title params="md:2,sm:2,xs:4">日期选择:</form-title>
-        <form-ctn params="md:4,sm:4,xs:4">
-          <u-datepicker params='vm:{data:$root.model},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>
-        </form-ctn>
-        <form-title params="md:2,sm:4,xs:4">日期placeholder:</form-title>
-        <form-ctn params="md:4,sm:4,xs:8">
-          <u-datepicker params='vm:{iconCls:"uf uf-triangle-down",placeholder:"请选择日期",data:$root.model},umeta:{"id":"udatetime223","field":"exceptEndTime","startField":"exceptStartTime"}'></u-datepicker>
-        </form-ctn>
+        <!-- 不推荐使用<form-title params="md:2,sm:2,xs:4">日期选择:</form-title>-->
+        <!--<form-ctn params="md:4,sm:4,xs:4">-->
+          <!--<u-datepicker params='vm:{data:$root.model},umeta:{"id":"udatetime222","field":"createTime","startField":"exceptStartTime"}'></u-datepicker>-->
+        <!--</form-ctn>-->
+        <!--<form-title params="md:2,sm:4,xs:4">日期placeholder:</form-title>-->
+        <!--<form-ctn params="md:4,sm:4,xs:8">-->
+          <!--<u-datepicker params='vm:{iconCls:"uf uf-triangle-down",placeholder:"请选择日期",data:$root.model},umeta:{"id":"udatetime223","field":"exceptEndTime","startField":"exceptStartTime"}'></u-datepicker>-->
+        <!--</form-ctn>-->
         <form-title params="md:2,sm:2,xs:4">下拉框:</form-title>
         <form-ctn params="md:4,sm:4,xs:4">
           <u-select params='vm:{iconCls:"uf uf-triangle-down",data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
@@ -320,12 +320,20 @@
         </div>
       </div>
       <div class="u-form-group">
-        <form-title params="xs:2">日期选择</form-title>
-        <form-ctn params="xs:4">
+        <form-title params="xs:1">日期选择</form-title>
+        <form-ctn params="xs:2">
           <datepicker params="placeholder:'请选择日期!',data: $root.model.ref('exceptStartTime')"></datepicker>
         </form-ctn>
+        <form-title params="xs:1">日期时间选择</form-title>
+        <form-ctn params="xs:2">
+          <datetimepicker params="placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datetimepicker>
+        </form-ctn>
+        <form-title params="xs:1">日期时间选择</form-title>
+        <form-ctn params="xs:2">
+          <datetimepicker params="placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datetimepicker>
+        </form-ctn>
         <form-title params="xs:2">日期时间选择</form-title>
-        <form-ctn params="xs:4">
+        <form-ctn params="xs:1">
           <datetimepicker params="placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datetimepicker>
         </form-ctn>
       </div>
