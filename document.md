@@ -229,3 +229,42 @@ viewmodel:{
 */
 <submit params="click:$root.forbitRepeatClick,text:'防止重复提交'"></submit>
 ```
+
+# 4 自定义指令
+
+## 4.1 hideInNewWindow
+
+使用场景：使用window.open或者 
+`<a target='_blank'></a>` 弹出的新窗口
+
+针对这些页面有些按钮需要隐藏（如：返回按钮（因为可能使用history.go(-1)来做返回操作））
+
+如何使用：
+```
+<div data-bind='hideInNewWindow,click:"xxx这里是原来的click事件"'></div>
+
+```
+
+## 4.2 repeatClick
+
+防止重复点击多次提交而设置的一个按钮，使用repeatClick代替click指令
+
+如何使用
+
+```
+<div data-bind='repeatClick:"xxx这里是原来的click事件"'></div>
+
+```
+
+## 4.3
+
+
+## 4.2 repeatSubmit
+
+防止重复点击多次提交而设置的一个按钮，使用repeatSubmit代替submit指令
+
+如何使用
+
+```
+<form data-bind='repeatSubmit:"xxx这里是原来的submit事件"'></form>
+

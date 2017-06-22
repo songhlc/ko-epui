@@ -192,11 +192,17 @@ window.app = window.u.createApp({
 - fileupload
 - 增加自定义指令的支持
 
-### 5.多页面应用脚手架
+### 5.自定义指令
+
+- hideInNewWindow
+- repeatClick
+- repeatSubmit
+
+### 6.多页面应用脚手架
 
 敬请期待
 
-### 6.更新日志
+### 7.更新日志
 - 2015-06-08 v2.1.6 修复datepicker组件在最右侧输入框过小的情况下的展示
 - 2015-05-24 v2.1.2 修改submit组件，添加更好的防重复提价机制
 - 2017-05-09 v2.1.0 增加datepicker 和datetimepicker组件
