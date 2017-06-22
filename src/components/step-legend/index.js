@@ -14,14 +14,15 @@
 *
 * */
 
-function init ({list, currentId, currentIndex}) {
+function init ({list, currentId, currentIndex, type = 'md'}) {
   this.list = list
   this.currentId = currentId
+  this.type = type
 
   if (currentIndex && currentIndex.subscribe) {
     this.currentIndex = currentIndex
   } else {
-    this.currentIndex = window.ko.observable(0)
+    this.currentIndex = window.ko.observable(currentIndex || 0)
   }
   if (this.currentId && this.currentId.subscribe) {
     // 支持currentId 设置currentIndex

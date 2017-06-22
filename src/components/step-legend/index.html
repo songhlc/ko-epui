@@ -1,4 +1,4 @@
-<div class="step-legend">
+<div class="step-legend" data-bind="css:{'step-sm':type=='sm'}">
   <ul>
     <!-- ko foreach: list -->
     <li data-bind="css:{'currentstep': $parent.currentIndex() == $index(), 'finishedstep': $parent.currentIndex() >= $index()}">
