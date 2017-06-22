@@ -203,6 +203,7 @@ window.app = window.u.createApp({
 敬请期待
 
 ### 7.更新日志
+- 2015-06-22 v2.2.0 新增三个自定义指令，新增steplegend组件
 - 2015-06-08 v2.1.6 修复datepicker组件在最右侧输入框过小的情况下的展示
 - 2015-05-24 v2.1.2 修改submit组件，添加更好的防重复提价机制
 - 2017-05-09 v2.1.0 增加datepicker 和datetimepicker组件

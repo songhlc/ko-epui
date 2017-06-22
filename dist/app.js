@@ -1,4 +1,7 @@
 var viewModel = {
+  stepCurrentId: ko.observable(1),
+  stepCurrentIndex:ko.observable(0),
+  legend: ko.observableArray(),
   sizechange: function () {
     console.log('hello')
   },
@@ -213,5 +216,28 @@ setTimeout(function () {
       }
     ]
   )
+  viewModel.legend([
+    {
+      id: 1,
+      name: '立项'
+    }, {
+      id: 2,
+      name: '发公告'
+    }, {
+      id: 3,
+      name: '接受报名'
+    }, {
+      id: 4,
+      name: '资格预审'
+    }, {
+      id: 5,
+      name: '发标书'
+    }, {
+      id: 6,
+      name: '接受投标'
+    }
+  ])
   viewModel.index(2)
+  viewModel.stepCurrentIndex(3)
+  viewModel.stepCurrentId(4)
 }, 1000)

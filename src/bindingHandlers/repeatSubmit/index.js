@@ -14,10 +14,9 @@ const repeatSubmit = {
     }, 300)
     element.addEventListener('submit', function (event) {
       repeatSubmit(event, valueAccessor())
-      event.preventDefault();
-      return false;
+      event.preventDefault()
+      return false
     })
   }
 }
-
 export default repeatSubmit

@@ -1,0 +1,24 @@
+<div class="step-legend">
+  <ul>
+    <!-- ko foreach: list -->
+    <li data-bind="css:{'currentstep': $parent.currentIndex() == $index(), 'finishedstep': $parent.currentIndex() >= $index()}">
+      <div class="step-legend-name">
+        <div class="legend-arrow">
+          <span>&#9670;</span>
+        </div>
+        <div class="legend-content" data-bind="text:name">
+
+        </div>
+      </div>
+      <div class="step-legend-step">
+        <div class="step-outter">
+          <div class="step-inner" data-bind="text: $index() +1">
+          </div>
+        </div>
+        <div class="step-left"></div>
+        <div class="step-right"></div>
+      </div>
+    </li>
+    <!-- /ko -->
+  </ul>
+</div>

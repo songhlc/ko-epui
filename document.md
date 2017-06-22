@@ -230,6 +230,19 @@ viewmodel:{
 <submit params="click:$root.forbitRepeatClick,text:'防止重复提交'"></submit>
 ```
 
+## 3.6 steplegend 组件
+```
+<steplegend params="list: legend,currentIndex: stepCurrentIndex">
+
+</steplegend>
+  
+  or 
+  
+<steplegend params="list: legend,currentId: stepCurrentId">
+  
+</steplegend>
+```
+
 # 4 自定义指令
 
 ## 4.1 hideInNewWindow
