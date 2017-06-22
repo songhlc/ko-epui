@@ -4,6 +4,8 @@
 # ko-epui
 - 基于knockoutjs 和 [kero](http://tinper.org/dist/kero/index.html) 封装的UI组件
 
+## [Demo示例](http://songjl.github.io/demo/koepui/index.html)
+
 ## 目录
 
 - 1.介绍
@@ -12,7 +14,7 @@
 - 4.组件列表
 - 5.多页面应用脚手架
 - 6.更新日志
-- 7. [Document](https://github.com/songhlc/ko-epui/blob/master/document.md)
+- 7.[Document](https://github.com/songhlc/ko-epui/blob/master/document.md)
 
 
 ## 1.介绍
