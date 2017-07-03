@@ -1,6 +1,7 @@
 .step-legend{
   min-height: 100px;
   text-align: center;
+  margin-top: 30px;
   ul{
     list-style: none;
     padding: 0;
@@ -12,11 +13,12 @@
       .step-legend-name{
         position: relative;
         display: inline-block;
-        margin: 10px 20px;
+        margin: 0 20px;
         opacity: 1;
         font-size: 14px;
         .legend-arrow{
           position: absolute;
+          display: none;
           width: 0;
           height: 0;
           border-color: transparent;
@@ -39,9 +41,6 @@
           width: 90px;
           max-width: 90px;
           text-align: center;
-          background: #FFFFFF;
-          box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
-          border-radius: 4px;
         }
       }
       .step-legend-step{
@@ -96,13 +95,22 @@
       display: none;
     }
     .currentstep{
-      .step-legend-name .legend-arrow span {
-        top: -15px !important;
-        color: #4dbea5 !important;
+      .step-legend-name {
+        top: -10px;
+        .legend-arrow{
+          display: inline-block;
+          border-top-color:#14c590;
+          span {
+            top: -17px !important;
+            color: #FFF !important;
+          }
+        }
       }
       .legend-content{
-        color: #FFF !important;
-        background: #4DBEA5 !important;
+        color: #4DBEA5 !important;
+        background: #FFF !important;
+        border-radius: 4px;
+        border: solid 1px #4DBEA5;
       }
     }
     .finishedstep .step-inner{
