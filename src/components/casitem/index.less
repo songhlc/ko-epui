@@ -1,0 +1,35 @@
+.casitem{
+  display: inline-block;
+  min-width: 100px;
+  height: 180px;
+  margin: 0;
+  padding: 5px 0!important;
+  vertical-align: top;
+  list-style: none;
+  border-right: 1px solid #e9eaec;
+  overflow: auto;
+  .casitem-item{
+    margin: 0;
+    line-height: normal;
+    padding: 7px 16px;
+    clear: both;
+    color: #495060;
+    font-size: 12px!important;
+    white-space: nowrap;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    padding-right: 24px;
+    transition: all .2s ease-in-out;
+    &.active{
+      background-color: #eee;
+      color: #1baede !important;
+    }
+    i{
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      margin-top: -6px;
+    }
+  }
+}

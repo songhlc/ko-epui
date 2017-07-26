@@ -1,0 +1,11 @@
+<ul data-bind="foreach: { data: data(), as: 'row' }" class="casitem">
+  <li data-bind="click: function(){ return $parent.expandChild($data, $index())}, css:{active:$index() == $parent.activeIndex()}" class="casitem-item">
+    <span data-bind="text:row.name"></span>
+    <!-- ko if: row.children && row.children.length > 0 -->
+    <i class="fa fa-angle-right"></i>
+    <!-- /ko -->
+  </li>
+</ul>
+<!-- ko if: subList().length > 0 -->
+<casitem params="data: subList, selectedValue: selectedValue"></casitem>
+<!-- /ko -->

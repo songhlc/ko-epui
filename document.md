@@ -243,6 +243,53 @@ viewmodel:{
 </step-legend>
 ```
 
+## 3.7 cascader 级联组件(暂不知此异步加载)
+```
+<cascader params='data:cascaderData, selectedValue: cascaderValue'>
+          </cascader>
+          
+cascaderData: ko.observableArray([
+    {
+      id: 1,
+      name: '1',
+    }, {
+      id: 2,
+      name: '有下级',
+      children: [
+        {
+          id:3,
+          name: '4',
+        }, {
+          id:4,
+          name: '有下级',
+          children: [
+            {
+              id:5,
+              name: '4',
+            }, {
+              id:6,
+              name: '有下级',
+              children: [
+                {
+                  id:7,
+                  name: '4',
+                }, {
+                  name: '有下级',
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }, {
+      id:8,
+      name: '3',
+    }
+  ]),
+  cascaderValue: ko.observable({name: '', id: ''}),          
+          
+```
+
 # 4 自定义指令
 
 ## 4.1 hideInNewWindow

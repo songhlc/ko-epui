@@ -1,0 +1,10 @@
+<div class="cascader" data-bind="clickoutside: handleClose">
+  <div class="u-form-control cascader-display" style="    line-height: 24px;" data-bind="click: handleVisible">
+    <span data-bind="text:selectedValue().name"></span>
+    <i class="fa fa-angle-down" style="position: absolute;right: 10px;top:13px;"></i>
+  </div>
+
+  <div class="select-dropdown" data-bind="visible: casitmevisible">
+    <casitem params="data: data,selectedValue:selectedValue"></casitem>
+  </div>
+</div>

@@ -260,6 +260,11 @@
           <u-switch params='vm:{data:$root.model},umeta:{"field":"switch"}'>
           </u-switch>
         </form-ctn>
+        <form-title params="md:2,sm:2,xs:4">级联cascader:</form-title>
+        <form-ctn params="md:4,sm:4,xs:4">
+          <cascader params='data:$root.cascaderData, selectedValue: $root.cascaderValue'>
+          </cascader>
+        </form-ctn>
         <form-title params="md:2,sm:2,xs:4">checkbox:</form-title>
         <form-ctn params="md:4,sm:4,xs:4">
           <u-checkbox class="checkbox-inline" params='vm:{data:$root.model,datasource:$root.checkboxData},umeta:{"id":"c1","field":"checkbox"}'>

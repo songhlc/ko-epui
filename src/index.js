@@ -1,11 +1,11 @@
 import './index.less'
 /* global ko */
 // 组件列表
-const normalcomplist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'state-tabs', 'box-sticky', 'submit', 'datepicker', 'datetimepicker', 'step-legend']
+const normalcomplist = ['box', 'box-tabs', 'box-filter', 'box-content', 'state-item', 'state-tabs', 'box-sticky', 'submit', 'datepicker', 'datetimepicker', 'step-legend', 'casitem', 'cascader']
 // iuap 组件
 const createcomplist = ['u-datepicker', 'u-select', 'u-switch', 'u-checkbox', 'u-radio', 'u-year', 'u-month', 'u-yearmonth', 'u-currency', 'u-tree', 'u-input', 'u-tooltip', 'u-pagination', 'form-group', 'form-title', 'form-text', 'form-ctn']
 // 自定义指令
-const bindingHandlers = ['ko-currency', 'hideInNewWindow', 'repeatSubmit', 'repeatClick']
+const bindingHandlers = ['ko-currency', 'hideInNewWindow', 'repeatSubmit', 'repeatClick', 'clickoutside']
 // 注册普通组件
 function registerComponent (name) {
   ko.components.register(name, {
