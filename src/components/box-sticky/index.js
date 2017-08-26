@@ -7,6 +7,7 @@ var o = {
   topSpacing: 0,
   className: 'is-sticky'
 }
+window.isRecomputeActiveAnchor = true
 function init (params) {
   this.title = params.title
   let stickyElement = $('#box-sticky')
@@ -29,10 +30,17 @@ function init (params) {
       var target = $(this.hash)
       $('.sticky-anchor').removeClass('active')
       $(this).addClass('active')
+      // 至于滚轮滚动的时候才会触发 鼠标点击上面不会触发
+      window.isRecomputeActiveAnchor = false
+      // 2s后方便鼠标滚轮事件触发
+      setTimeout(function () {
+        window.isRecomputeActiveAnchor = true
+      }, 2000)
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
       if (target.length) {
         $('html, body').animate({
-          scrollTop: target.offset().top - 40
+          // 改成更合适的高度
+          scrollTop: target.offset().top - 50
         }, 1000)
         return false
       }
@@ -49,16 +57,19 @@ function scroller () {
       anchorlist.push($(this).attr('href'))
     })
   }
-  anchorlist.forEach(function (item) {
-    let pos = $(item).offset().top - $('body').scrollTop()
-    // 确保滚轮滚动时 会定位到相应的选项
-    if (pos - document.body.clientHeight / 2 < 50) {
-      if (!($('.sticky-anchor[href="' + item + '"]').hasClass('active'))) {
-        $('.sticky-anchor').removeClass('active')
-        $('.sticky-anchor[href="' + item + '"]').addClass('active')
+  // 至于滚轮滚动的时候才会触发 鼠标点击上面不会触发
+  if (window.isRecomputeActiveAnchor) {
+    anchorlist.forEach(function (item) {
+      let pos = $(item).offset().top - $('body').scrollTop()
+      // 确保滚轮滚动时 会定位到相应的选项
+      if (pos - document.body.clientHeight / 2 < 50) {
+        if (!($('.sticky-anchor[href="' + item + '"]').hasClass('active'))) {
+          $('.sticky-anchor').removeClass('active')
+          $('.sticky-anchor[href="' + item + '"]').addClass('active')
+        }
       }
-    }
-  })
+    })
+  }
   // update height in case of dynamic content
   o.stickyWrapper.css('height', o.stickyElement.outerHeight())
   let scrollTop = $(window).scrollTop()
