@@ -3,7 +3,7 @@ var config = require('./webpack.base.config'),
   ExtractTextPlugin = require("extract-text-webpack-plugin"),
   webpack = require('webpack');
 var merge = require('webpack-merge')
-config.devtool = 'source-map'
+config.devtool = 'inline-source-map'
 config = merge(config, {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({

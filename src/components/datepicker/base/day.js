@@ -36,7 +36,8 @@ function init (params) {
   // 判断是否当前天
   this.isSelectedDay = (cellType, cellDay) => {
     if (cellType === 'normal') {
-      var _date = new Date(params.data())
+      // fix ie and edge new date bug
+      var _date = new Date(params.data().replaceAll('-', '/'))
       if (cellDay === this.day() && this.month() === (_date.getMonth() + 1) && this.year() === (_date.getFullYear())) {
         return true
       }

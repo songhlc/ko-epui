@@ -25,6 +25,7 @@ function init (params) {
     // window.attachEvent('onresize', resizer)
   }
   setTimeout(scroller, 0)
+  var timeout = null
   stickyElement.delegate('.sticky-anchor', 'click', function () {
     if (window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && window.location.hostname === this.hostname) {
       var target = $(this.hash)
@@ -32,8 +33,12 @@ function init (params) {
       $(this).addClass('active')
       // 至于滚轮滚动的时候才会触发 鼠标点击上面不会触发
       window.isRecomputeActiveAnchor = false
+      // 快速点击时清除之前的定时器
+      if (timeout) {
+        clearTimeout(timeout)
+      }
       // 2s后方便鼠标滚轮事件触发
-      setTimeout(function () {
+      timeout = setTimeout(function () {
         window.isRecomputeActiveAnchor = true
       }, 2000)
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
