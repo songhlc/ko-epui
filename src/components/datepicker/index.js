@@ -62,7 +62,7 @@ function init ({placeholder, data, isTimer = false, lang = 'zh'}) {
   })
   // 生成初始化的值
   this.generateDate = (v) => {
-    var _date = v ? (new Date(v.replaceAll('-', '/'))) : (new Date())
+    var _date = v ? (new Date(v.replace(/-/g, '/'))) : (new Date())
     this.year(_date.getFullYear())
     this.month(_date.getMonth() + 1)
     this.day(_date.getDate())
