@@ -37,9 +37,14 @@ function init (params) {
   this.isSelectedDay = (cellType, cellDay) => {
     if (cellType === 'normal') {
       // fix ie and edge new date bug
-      var _date = new Date(params.data().replace(/-/g, '/'))
-      if (cellDay === this.day() && this.month() === (_date.getMonth() + 1) && this.year() === (_date.getFullYear())) {
-        return true
+
+      if (params.data()) {
+        var _date = new Date(params.data().replace(/-/g, '/'))
+        if (cellDay === this.day() && this.month() === (_date.getMonth() + 1) && this.year() === (_date.getFullYear())) {
+          return true
+        }
+      } else {
+        return false
       }
     } else {
       return false
