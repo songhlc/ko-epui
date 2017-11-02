@@ -175,24 +175,23 @@ var viewModel = {
   }
 }
 setTimeout(function () {
-  viewModel.model.createEmptyRow()
-  // viewModel.model.setSimpleData({
-  //   enterpriseName: '公司名称1',
-  //   createField: 'test1',
-  //   uyear: 2016,
-  //   umonth: 12,
-  //   switch: 1,
-  //   checkbox: '1',
-  //   exceptStartTime: '2015-02-02',
-  //   createTime: null,
-  //   endTime: undefined,
-  //   purchaseType: '2',
-  //   radio: '2',
-  //   uyearmonth: '2016-12',
-  //   ucurrency: '200.02',
-  //   name: '',
-  //   selectdata: ''
-  // })
+  viewModel.model.setSimpleData({
+    enterpriseName: '公司名称1',
+    createField: 'test1',
+    uyear: 2016,
+    umonth: 12,
+    switch: 1,
+    checkbox: '1',
+    exceptStartTime: '2015-02-02',
+    createTime: null,
+    endTime: undefined,
+    purchaseType: '2',
+    radio: '2',
+    uyearmonth: '2016-12',
+    ucurrency: '200.02',
+    name: '',
+    selectdata: ''
+  })
 }, 100)
 var treedata = [{
   'id': '01',
