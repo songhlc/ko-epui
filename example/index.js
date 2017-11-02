@@ -146,8 +146,8 @@ var viewModel = {
   radiodata: [
     {value: '1', name: '男'}, {value: '2', name: '女'}
   ],
-  maxDate: ko.observable('2018-09-30'),
-  minDate: ko.observable('2017-09-30'),
+  maxDate: ko.observable(),
+  minDate: ko.observable(),
   model: new window.u.DataTable({
     meta: {
       name: '',
@@ -158,6 +158,7 @@ var viewModel = {
       checkbox: '',
       exceptStartTime: {type: 'datetime'},
       createTime: {type: 'datetime'},
+      endTime: {type: 'datetime'},
       purchaseType: '',
       radio: {type: 'Boolean'},
       umonth: '',
@@ -174,22 +175,24 @@ var viewModel = {
   }
 }
 setTimeout(function () {
-  viewModel.model.setSimpleData({
-    enterpriseName: '公司名称1',
-    createField: 'test1',
-    uyear: 2016,
-    umonth: 12,
-    switch: 1,
-    checkbox: '1',
-    exceptStartTime: '2015-02-02',
-    createTime: null,
-    purchaseType: '2',
-    radio: '2',
-    uyearmonth: '2016-12',
-    ucurrency: '200.02',
-    name: '',
-    selectdata: ''
-  })
+  viewModel.model.createEmptyRow()
+  // viewModel.model.setSimpleData({
+  //   enterpriseName: '公司名称1',
+  //   createField: 'test1',
+  //   uyear: 2016,
+  //   umonth: 12,
+  //   switch: 1,
+  //   checkbox: '1',
+  //   exceptStartTime: '2015-02-02',
+  //   createTime: null,
+  //   endTime: undefined,
+  //   purchaseType: '2',
+  //   radio: '2',
+  //   uyearmonth: '2016-12',
+  //   ucurrency: '200.02',
+  //   name: '',
+  //   selectdata: ''
+  // })
 }, 100)
 var treedata = [{
   'id': '01',
@@ -254,6 +257,7 @@ window.app = window.u.createApp({
 })
 
 setTimeout(function () {
+  viewModel.minDate('2017-10-10')
   viewModel.test("ggg2")
   tabs[0].num = 10
   // ko 列表监控问题 无法检测到属性改变 除非每个属性都监控

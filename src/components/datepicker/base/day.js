@@ -20,7 +20,11 @@ function init (params) {
     return getStartDateOfMonth(this.year(), this.month())
   }, this)
   this.disabledDate = function (time) {
-    if (clearHours(time) <= clearHours(new Date(params.minDate())) || clearHours(time) >= clearHours(new Date(params.maxDate()))) {
+    if (params.minDate() && clearHours(time) <= clearHours(new Date(params.minDate()))) {
+      debugger
+      return true
+    } else if (params.maxDate() && clearHours(time) >= clearHours(new Date(params.maxDate()))) {
+      debugger
       return true
     } else {
       return false
@@ -143,15 +147,12 @@ function init (params) {
       for (var j = 0; j < 7; j++) {
         let cell = row[this.showWeekNumber ? j + 1 : j]
         if (!cell) {
-          cell = { row: i, column: j, type: 'normal', inRange: false, start: false, end: false }
+          cell = { row: i, column: j, type: 'normal' }
         }
         cell['$parent'] = that
         cell.type = 'normal'
         const index = i * 7 + j
         const time = startDate.getTime() + DAY_DURATION * (index - offset)
-        cell.inRange = time >= clearHours(this.minDate) && time <= clearHours(this.maxDate)
-        cell.start = this.minDate && time === clearHours(this.minDate)
-        cell.end = this.maxDate && time === clearHours(this.maxDate)
         const isToday = time === now
         if (isToday) {
           cell.type = 'today'
@@ -185,16 +186,6 @@ function init (params) {
         }
         // this.$set(row, this.showWeekNumber ? j + 1 : j, cell)
       }
-      if (this.selectionMode === 'week') {
-        const start = this.showWeekNumber ? 1 : 0
-        const end = this.showWeekNumber ? 7 : 6
-        const isWeekActive = this.isWeekActive(row[start + 1])
-        row[start].inRange = isWeekActive
-        row[start].start = isWeekActive
-        row[end].inRange = isWeekActive
-        row[end].end = isWeekActive
-      }
-
       rows[i](row)
     }
     rows.firstDayPosition = firstDayPosition

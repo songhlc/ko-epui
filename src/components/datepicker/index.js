@@ -77,20 +77,17 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
   // 初始化值
   this.generateDate()
   this.year.subscribe((value) => {
-    console.log('parent.subscribe year:' + value)
     this.showyear(false)
     this.showmonth(true)
     // 监听年选中
   })
 
   this.month.subscribe((value) => {
-    console.log('parent.subscribe month:' + value)
     this.showmonth(false)
     this.showday(true)
   })
 
   this.day.subscribe((value) => {
-    console.log('parent.subscribe day:' + value)
     if (!this.isTimer) {
       this.bindModelValue()
     }
