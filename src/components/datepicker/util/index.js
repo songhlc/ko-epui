@@ -34,7 +34,7 @@ export const getWeekNumber = function (src) {
 }
 
 export const getStartDateOfMonth = function (year, month) {
-  const result = new Date(year, month, 1)
+  const result = new Date(year, month - 1, 1)
   const day = result.getDay()
 
   if (day === 0) {

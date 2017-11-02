@@ -1,6 +1,6 @@
 import {getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth} from '../util'
 /* global ko */
-const DAY_DURATION = 86400000
+const DAY_DURATION = 86400000 // 1天
 const clearHours = function (time) {
   const cloneDate = new Date(time)
   cloneDate.setHours(0, 0, 0, 0)
@@ -19,7 +19,14 @@ function init (params) {
   this.startDate = ko.computed(function () {
     return getStartDateOfMonth(this.year(), this.month())
   }, this)
-  this.disabledDate = {}
+  this.disabledDate = function (time) {
+    console.log((new Date(clearHours(time))).toLocaleDateString())
+    if (clearHours(time) < clearHours(new Date(params.minDate())) || clearHours(time) >= clearHours(new Date(params.maxDate()))) {
+      return true
+    } else {
+      return false
+    }
+  }
 
   this.showWeekNumber = false
   this.offsetDay = ko.computed(function () {
@@ -28,10 +35,31 @@ function init (params) {
     return week > 3 ? 7 - week : -week
   }, this)
   // 选择日期
-  this.handleDayClick = function (val) {
-    this.day(val)
+  this.handleDayClick = function (cell) {
+    if (cell.disabled) {
+      return
+    }
+    let year = this.year()
+    let month = this.month()
+    let day = cell.text
+    // 跨页选取
+    if (cell.type === 'prev-month') {
+      if (month === 1) {
+        year--
+        month = 12
+      } else {
+        month--
+      }
+    } else if (cell.type === 'next-month') {
+      if (month === 12) {
+        year++
+        month = 1
+      } else {
+        month++
+      }
+    }
     // 切换到其他月份的时候
-    params.data((new Date(this.year(), this.month() - 1, this.day(), params.hour(), params.minutes(), params.seconds())).Format(params.isTimer ? 'yyyy-MM-dd hh:mm:ss' : 'yyyy-MM-dd'))
+    params.data((new Date(year, month - 1, day, params.hour(), params.minutes(), params.seconds())).Format(params.isTimer ? 'yyyy-MM-dd hh:mm:ss' : 'yyyy-MM-dd'))
   }
   // 判断是否当前天
   this.isSelectedDay = (cellType, cellDay) => {
@@ -106,6 +134,7 @@ function init (params) {
     const disabledDate = this.disabledDate
     const now = clearHours(new Date())
     for (var i = 0; i < 6; i++) {
+      // 每一行
       const row = rows[i]()
       if (this.showWeekNumber) {
         if (!row[0]) {
@@ -126,7 +155,6 @@ function init (params) {
         cell.end = this.maxDate && time === clearHours(this.maxDate)
         const isToday = time === now
         if (isToday) {
-          debugger
           cell.type = 'today'
         }
         if (i >= 0 && i <= 1) {

@@ -45,7 +45,7 @@ const getElementLeft = function (element) {
   }
   return actualLeft
 }
-function init ({placeholder, data, isTimer = false, lang = 'zh'}) {
+function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDate}) {
   var that = this
   this.lang = lang
   this.isTimer = isTimer
@@ -57,6 +57,8 @@ function init ({placeholder, data, isTimer = false, lang = 'zh'}) {
   this.hour = ko.observable(0)
   this.minutes = ko.observable(0)
   this.seconds = ko.observable(0)
+  this.minDate = ko.observable(minDate || '1600-01-01')
+  this.maxDate = ko.observable(maxDate || '2099-12-31')
   this.data.subscribe((value) => {
     this.generateDate(value)
   })

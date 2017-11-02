@@ -6,7 +6,7 @@
   "scripts": {
     "test": "test",
     "build": "webpack --progress  --config build/webpack.prod.config.js",
-    "dev": "webpack-dev-server --port 8081 --host 127.0.0.1 --inline --hot --config build/webpack.dev.config.js"
+    "dev": "webpack-dev-server --open --port 8081 --host 127.0.0.1 --inline --hot --config build/webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
