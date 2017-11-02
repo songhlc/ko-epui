@@ -57,8 +57,8 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
   this.hour = ko.observable(0)
   this.minutes = ko.observable(0)
   this.seconds = ko.observable(0)
-  this.minDate = ko.observable(minDate || '1600-01-01')
-  this.maxDate = ko.observable(maxDate || '2099-12-31')
+  this.minDate = minDate || ko.observable('1600-01-01')
+  this.maxDate = maxDate || ko.observable('2099-12-31')
   this.data.subscribe((value) => {
     this.generateDate(value)
   })

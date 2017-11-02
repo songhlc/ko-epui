@@ -20,8 +20,7 @@ function init (params) {
     return getStartDateOfMonth(this.year(), this.month())
   }, this)
   this.disabledDate = function (time) {
-    console.log((new Date(clearHours(time))).toLocaleDateString())
-    if (clearHours(time) < clearHours(new Date(params.minDate())) || clearHours(time) >= clearHours(new Date(params.maxDate()))) {
+    if (clearHours(time) <= clearHours(new Date(params.minDate())) || clearHours(time) >= clearHours(new Date(params.maxDate()))) {
       return true
     } else {
       return false

@@ -146,6 +146,8 @@ var viewModel = {
   radiodata: [
     {value: '1', name: '男'}, {value: '2', name: '女'}
   ],
+  maxDate: ko.observable('2018-09-30'),
+  minDate: ko.observable('2017-09-30'),
   model: new window.u.DataTable({
     meta: {
       name: '',
