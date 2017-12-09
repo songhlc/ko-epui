@@ -73,9 +73,11 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
       this.minutes(_date.getMinutes())
       this.seconds(_date.getSeconds())
     }
+    // 默认传入的值可能带时间，需要去掉时间
+    if (!this.isTimer) {
+      this.bindModelValue()
+    }
   }
-  // 初始化值
-  this.generateDate()
   this.year.subscribe((value) => {
     this.showyear(false)
     this.showmonth(true)
@@ -181,6 +183,8 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
     this.showday(false)
     this.isPopup(false)
   }
+  // 初始化值
+  this.generateDate()
 }
 
 export default init

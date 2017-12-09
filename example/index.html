@@ -250,7 +250,7 @@
         <!--</form-ctn>-->
         <form-title params="md:2,sm:2,xs:4">下拉框:</form-title>
         <form-ctn params="md:4,sm:4,xs:4">
-          <u-select params='vm:{iconCls:"uf uf-triangle-down",data:$root.model,datasource: $root.comboData},umeta:{"field":"purchaseType"}'>
+          <u-select params='vm:{iconCls:"uf uf-triangle-down",data:$root.model,datasource: $root.comboData},umeta:{"id":"uselect","field":"purchaseType"}'>
           </u-select>
         </form-ctn>
         <form-title params="md:2,sm:4,xs:4">带placeholder下拉框:</form-title>
@@ -334,20 +334,20 @@
         </div>
       </div>
       <div class="u-form-group">
-        <form-title params="xs:1">日期选择</form-title>
+        <form-title params="xs:2">日期选择</form-title>
         <form-ctn params="xs:2">
-          <datepicker params="placeholder:'请选择日期!',data: $root.model.ref('exceptStartTime')"></datepicker>
+          <datepicker params="placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datepicker>
         </form-ctn>
-        <form-title params="xs:1">时间选择开始</form-title>
+        <form-title params="xs:2">时间选择开始</form-title>
         <form-ctn params="xs:2">
           <datetimepicker params="maxDate:$root.model.ref('endTime'),minDate:$root.minDate,placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datetimepicker>
         </form-ctn>
-        <form-title params="xs:1">时间选择结束</form-title>
+        <form-title params="xs:2">时间选择结束</form-title>
         <form-ctn params="xs:2">
           <datetimepicker params="placeholder:'请选择时间',data: $root.model.ref('endTime')"></datetimepicker>
         </form-ctn>
         <form-title params="xs:2">日期时间选择</form-title>
-        <form-ctn params="xs:1">
+        <form-ctn params="xs:2">
           <datetimepicker params="placeholder:'请选择日期!',data: $root.model.ref('createTime')"></datetimepicker>
         </form-ctn>
       </div>
