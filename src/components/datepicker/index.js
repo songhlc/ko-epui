@@ -64,18 +64,21 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
   })
   // 生成初始化的值
   this.generateDate = (v) => {
-    var _date = v ? (new Date(v.replace(/-/g, '/'))) : (new Date())
-    this.year(_date.getFullYear())
-    this.month(_date.getMonth() + 1)
-    this.day(_date.getDate())
-    if (this.isTimer) {
-      this.hour(_date.getHours())
-      this.minutes(_date.getMinutes())
-      this.seconds(_date.getSeconds())
-    }
-    // 默认传入的值可能带时间，需要去掉时间
-    if (!this.isTimer) {
-      this.bindModelValue()
+    // 有可能初始化的时候没有返回值 那么就不处理
+    if (v) {
+      var _date = v ? (new Date(v.replace(/-/g, '/'))) : (new Date())
+      this.year(_date.getFullYear())
+      this.month(_date.getMonth() + 1)
+      this.day(_date.getDate())
+      if (this.isTimer) {
+        this.hour(_date.getHours())
+        this.minutes(_date.getMinutes())
+        this.seconds(_date.getSeconds())
+      }
+      // 默认传入的值可能带时间，需要去掉时间
+      if (!this.isTimer) {
+        this.bindModelValue()
+      }
     }
   }
   this.year.subscribe((value) => {
@@ -183,8 +186,8 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
     this.showday(false)
     this.isPopup(false)
   }
-  // 初始化值
-  this.generateDate()
+  // 初始化值，一开始有可能就有值，需要把值传入
+  this.generateDate(this.data())
 }
 
 export default init

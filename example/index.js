@@ -175,7 +175,7 @@ var viewModel = {
   }
 }
 setTimeout(function () {
-  viewModel.model.setSimpleData({
+  viewModel.model.setSimpleData([{
     enterpriseName: '公司名称1',
     createField: 'test1',
     uyear: 2016,
@@ -183,16 +183,16 @@ setTimeout(function () {
     switch: 1,
     checkbox: '1',
     exceptStartTime: '2015-02-02',
-    createTime: '2015-02-02 12:00:00',
-    endTime: undefined,
+    createTime: '2017-12-12 00:00:00',
+    endTime: '',
     purchaseType: '2',
     radio: '2',
     uyearmonth: '2016-12',
     ucurrency: '200.02',
     name: '',
     selectdata: ''
-  })
-}, 100)
+  }])
+}, 1000)
 var treedata = [{
   'id': '01',
   'pid': 'root',
