@@ -59,26 +59,31 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
   this.seconds = ko.observable(0)
   this.minDate = minDate || ko.observable('1600-01-01')
   this.maxDate = maxDate || ko.observable('2099-12-31')
+  // 用于区分是来自初始化的值还是监听改变的值
+  var isInitFlag = true
   this.data.subscribe((value) => {
     this.generateDate(value)
   })
   // 生成初始化的值
   this.generateDate = (v) => {
-    // 有可能初始化的时候没有返回值 那么就不处理
+    // 如果默认有值则都设置为false， bindModelValue里使用判断是否要预设值
+    // 需求是 如果传入的是2012-12-12 00：00：00 datepicker也要显示成日期不带时间
     if (v) {
-      var _date = v ? (new Date(v.replace(/-/g, '/'))) : (new Date())
-      this.year(_date.getFullYear())
-      this.month(_date.getMonth() + 1)
-      this.day(_date.getDate())
-      if (this.isTimer) {
-        this.hour(_date.getHours())
-        this.minutes(_date.getMinutes())
-        this.seconds(_date.getSeconds())
-      }
-      // 默认传入的值可能带时间，需要去掉时间
-      if (!this.isTimer) {
-        this.bindModelValue()
-      }
+      isInitFlag = false
+    }
+    // 有可能初始化的时候没有返回值 那么就不处理
+    var _date = v ? (new Date(v.replace(/-/g, '/'))) : (new Date())
+    this.year(_date.getFullYear())
+    this.month(_date.getMonth() + 1)
+    this.day(_date.getDate())
+    if (this.isTimer) {
+      this.hour(_date.getHours())
+      this.minutes(_date.getMinutes())
+      this.seconds(_date.getSeconds())
+    }
+    // 默认传入的值可能带时间，需要去掉时间
+    if (!this.isTimer) {
+      this.bindModelValue()
     }
   }
   this.year.subscribe((value) => {
@@ -158,8 +163,10 @@ function init ({placeholder, data, isTimer = false, lang = 'zh', minDate, maxDat
     } else {
       _date = new Date(this.year(), this.month() - 1, this.day()).Format(DATEFORMAT)
     }
-
-    that.data(_date)
+    // 不是初始化的时候才setData
+    if (!isInitFlag) {
+      that.data(_date)
+    }
   }
   //
   this.confirm = () => {
