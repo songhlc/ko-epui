@@ -1,13 +1,14 @@
-<div class="timer-ctn" data-bind="css:{'hidden':!showtimer()}">
-  <div class="timer-header">
+<div class="y-timer-ctn" data-bind="css:{'hidden':!showtimer()}">
+  <div class="y-timer-header">
 
   </div>
-  <table class="timer-body">
+  <table class="y-timer-body">
     <tr>
       <td>
         <div>
           <div class="fa fa-angle-up" data-bind="click: nexthour, event:{mousedown:nexthourholddown,mouseup:holdup,blur:blur}"></div>
-          <div class="timer" data-bind="text:hour"></div>
+          <!-- <div class="timer" data-bind="text:hour"></div> -->
+          <input class="timer" type="text"  data-bind="value:hour, event:{blur:function(){blurHour(event)},input:function(){onInput(event)}}">
           <div class="fa fa-angle-down" data-bind="click: lasthour,event:{mousedown:lasthourholddown,mouseup:holdup,blur:blur}"></div>
         </div>
       </td>
@@ -15,7 +16,8 @@
       <td>
         <div>
           <div class="fa fa-angle-up" data-bind="click: nextminutes, event:{mousedown:nextminholddown,mouseup:holdup,blur:blur}"></div>
-          <div class="timer" data-bind="text:minutes"></div>
+          <!-- <div class="timer" data-bind="text:minutes"></div> -->
+          <input class="timer" type="text"  data-bind="value:minutes, event:{blur:function(){blurMinutes(event)},input:function(){onInput(event)}}">
           <div class="fa fa-angle-down" data-bind="click: lastminutes, event:{mousedown:lastminholddown,mouseup:holdup,blur:blur}"></div>
         </div>
       </td>
@@ -23,7 +25,8 @@
       <td>
         <div>
           <div class="fa fa-angle-up" data-bind="click: nextseconds, event:{mousedown:nextsecholddown,mouseup:holdup,blur:blur}"></div>
-          <div class="timer" data-bind="text:seconds"></div>
+          <!-- <div class="timer" data-bind="text:seconds"></div> -->
+          <input class="timer" type="text"  data-bind="value:seconds, event:{blur:function(){blurSeconds(event)},input:function(){onInput(event)}}">
           <div class="fa fa-angle-down" data-bind="click: lastseconds,event:{mousedown:lastsecholddown,mouseup:holdup,blur:blur}"></div>
         </div>
       </td>

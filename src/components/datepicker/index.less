@@ -1,65 +1,108 @@
-.datepicker-input{
+.y-input {
+  height: 32px;
+  line-height: 1;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ececec;
+  color: #333;
+  display: block;
+  padding: 6px 12px;
+  border-radius: 2px;
+  transition: border-color .15s ease-in-out 0s, box-shadow .15s ease-in-out 0s;
+  width: 100%;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.y-input:hover {
+  border-color: #3ca7e3;
+}
+
+.y-input:focus {
+  outline: 0;
+}
+
+.y-datepicker-input {
   position: relative;
-  .fa{
+  background: #FFF;
+
+  .fa {
     position: absolute;
-    right: 10px;
-    top:10px;
+    top: 50%;
+    right: 8px;
+    line-height: 1;
+    margin-top: -7px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #666;
   }
 }
-.datepicker-ctn{
-  position: absolute;
-  box-shadow: 0 2px 6px #ccc;
-  width: 240px;
-  height: 260px;
-  top: -100px;
-  color: #333;
-  display: none;
-  background-color: #FFF;
-  &.alignright{
+
+.y-datepicker-ctn {
+  height: 298px;
+
+  &.alignright {
     right: 0;
   }
-  &.select-date{
+
+  &.select-date {
     display: block;
   }
-  &.isTimer .datepicker-option .confirmbutton,&.isTimer .datepicker-option .timer-picker{
+
+  &.isTimer .y-datepicker-option .confirmbutton,
+  &.isTimer .y-datepicker-option .timer-picker {
     display: inline-block;
   }
-  .datepicker-option > div {
+
+  .y-datepicker-option>div {
     width: 33.333%;
     display: inline-block;
     float: left;
     text-align: center;
     padding: 4px 0px;
-    margin-top: -8px;
+    margin-top: 0;
     border-radius: 2px;
-    &:hover{
+    line-height: 20px;
+    cursor: pointer;
+
+    &:hover {
       background-color: #eee;
     }
-    &.confirmbutton:hover{
+
+    &.confirmbutton:hover {
       background-color: #1baede;
       color: #FFF;
     }
   }
-  .datepicker-option .confirmbutton,.datepicker-option .timer-picker{
+
+  .y-datepicker-option .confirmbutton,
+  .y-datepicker-option .timer-picker {
     display: none;
   }
-  .datepicker-footer{
+
+  .y-datepicker-footer {
     position: absolute;
     background-color: #FFF;
     padding: 10px;
-    z-index:1001;
+    z-index: 1001;
+    border-radius: 4px;
     width: 100%;
-    .datepicker-option{
-      cursor:pointer
+    border: solid 1px #ececec;
+
+    .datepicker-option {
+      cursor: pointer
     }
   }
-  .hide{
+
+  .hide {
     display: none;
   }
-  .show{
+
+  .show {
     display: block;
   }
-  .datepicker-mask{
+
+  .y-datepicker-mask {
     position: fixed;
     left: 0;
     right: 0;
@@ -68,6 +111,20 @@
     z-index: 1000;
   }
 }
+
+.z-indexPicture {
+  input {
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  span {
+    z-index: 5;
+  }
+}
+
 @import "base/day.less";
 @import "base/month.less";
 @import "base/timer.less";

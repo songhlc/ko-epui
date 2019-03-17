@@ -1,18 +1,25 @@
 const DAY_DURATION = 86400000
+// 如果
+export function setData (value, observable, isNumbericValue) {
+  if (isNumbericValue) {
+    value = (new Date(value)).getTime()
+  }
+  observable(value)
+}
 // 获取每个月的第一天
-export const getFirstDayOfMonth = function (date) {
+export function getFirstDayOfMonth (date) {
   const temp = new Date(date.getTime())
   temp.setDate(1)
   return temp.getDay()
 }
 // 获取每个月的天数
-export const getDayCountOfMonth = function (year, month) {
+export function getDayCountOfMonth (year, month) {
   if (month === 3 || month === 5 || month === 8 || month === 10) {
     return 30
   }
-
   if (month === 1) {
-    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+    // 计算闰年
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
       return 29
     } else {
       return 28
@@ -22,7 +29,7 @@ export const getDayCountOfMonth = function (year, month) {
   return 31
 }
 
-export const getWeekNumber = function (src) {
+export function getWeekNumber (src) {
   const date = new Date(src.getTime())
   date.setHours(0, 0, 0, 0)
   // Thursday in current week decides the year.
@@ -33,7 +40,7 @@ export const getWeekNumber = function (src) {
   return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7)
 }
 
-export const getStartDateOfMonth = function (year, month) {
+export function getStartDateOfMonth (year, month) {
   const result = new Date(year, month - 1, 1)
   const day = result.getDay()
 
@@ -44,4 +51,3 @@ export const getStartDateOfMonth = function (year, month) {
   }
   return result
 }
-

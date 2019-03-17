@@ -1,53 +1,53 @@
-<div class="month-ctn">
-  <div class="month-header">
+<div class="y-month-ctn">
+  <div class="y-month-header">
     <div class="lastyear" data-bind="click: lastyear">&lt;&lt;</div>
     <div class="curyear">
       <span data-bind="text:year,click:chooseyear"></span>
     </div>
     <div class="nextyear" data-bind="click: nextyear">&gt;&gt;</div>
   </div>
-  <table class="month-body">
+  <table class="y-month-body">
     <tbody>
     <tr>
       <td data-bind="css:{curry:month() == 1}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(1)}">一月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(1)}, text: month1">一月</div>
       </td>
       <td data-bind="css:{curry:month() == 2}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(2)}">二月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(2)}, text: month2">二月</div>
       </td>
       <td data-bind="css:{curry:month() == 3}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(3)}">三月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(3)}, text: month3">三月</div>
       </td>
       <td data-bind="css:{curry:month() == 4}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(4)}">四月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(4)}, text: month4">四月</div>
       </td>
     </tr>
     <tr>
       <td data-bind="css:{curry:month() == 5}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(5)}">五月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(5)}, text: month5">五月</div>
       </td>
       <td data-bind="css:{curry:month() == 6}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(6)}">六月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(6)}, text: month6">六月</div>
       </td>
       <td data-bind="css:{curry:month() == 7}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(7)}">七月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(7)}, text: month7">七月</div>
       </td>
       <td data-bind="css:{curry:month() == 8}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(8)}">八月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(8)}, text: month8">八月</div>
       </td>
     </tr>
     <tr>
       <td data-bind="css:{curry:month() == 9}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(9)}">九月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(9)}, text: month9">九月</div>
       </td>
       <td data-bind="css:{curry:month() == 10}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(10)}">十月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(10)}, text: month10">十月</div>
       </td>
       <td data-bind="css:{curry:month() == 11}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(11)}">十一月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(11)}, text: month11">十一月</div>
       </td>
       <td data-bind="css:{curry:month() == 12}">
-        <div class="cell" data-bind="click:function(){handleMonthClick(12)}">十二月</div>
+        <div class="cell" data-bind="click:function(){handleMonthClick(12)}, text: month12">十二月</div>
       </td>
     </tr>
     </tbody>

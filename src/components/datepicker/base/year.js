@@ -1,5 +1,5 @@
 import './year.less'
-/* global ko */
+var ko = window.ko
 function init (params) {
   // 实际选择的年份
   this.year = params.year

@@ -1,5 +1,5 @@
 @basecolor: #3e9ed3;
-.timer-ctn{
+.y-timer-ctn{
   position: absolute;
   z-index: 1001;
   top: 0;
@@ -8,7 +8,7 @@
   bottom: 40px;
   background-color: #FFF;
   padding:20px;
-  .timer-body{
+  .y-timer-body{
     width: 100%;
     text-align: center;
     font-size: 18px;
@@ -27,13 +27,19 @@
     }
     .timer{
       height: 40px;
+      width: 45%;
+      border:1px solid #e5e6e7;
       line-height: 40px;
+      text-align: center;
       -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Chrome/Safari/Opera */
       -khtml-user-select: none; /* Konqueror */
       -moz-user-select: none; /* Firefox */
       -ms-user-select: none; /* Internet Explorer/Edge */
       user-select: none;
+      &:focus{
+        outline: 0;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "ko-epui",
-  "version": "2.2.15",
+  "version": "2.2.16",
   "description": "ui components for enterprise webapplication base on konckout and kero",
   "main": "dist/index.js",
   "scripts": {
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/songhlc/ko-epui#readme",
   "dependencies": {
+    "ko-bindinghandler": "^1.1.11",
     "lodash": "^4.17.4"
   },
   "devDependencies": {

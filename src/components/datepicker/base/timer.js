@@ -1,5 +1,5 @@
 import './timer.less'
-/* global ko */
+var ko = window.ko
 function init ({hour, minutes, seconds, showtimer}) {
   this.showtimer = showtimer
   this.hour = ko.computed(() => {
@@ -11,7 +11,12 @@ function init ({hour, minutes, seconds, showtimer}) {
   this.seconds = ko.computed(() => {
     return seconds() > 9 ? seconds() : ('0' + seconds())
   })
-
+  this.onInput = (e) => {
+    let val = parseFloat(e.target.value)
+    if (!/^[0-9]*[1-9][0-9]*$/.test(val)) {
+      e.target.value = '00'
+    }
+  }
   this.nexthour = () => {
     let _hour = hour() + 1
     if (_hour === 24) {
@@ -24,6 +29,16 @@ function init ({hour, minutes, seconds, showtimer}) {
     let _hour = hour() - 1
     if (_hour <= 0) {
       hour(23)
+    } else {
+      hour(_hour)
+    }
+  }
+  // 小时手动输入
+  this.blurHour = (e) => {
+    let _hour = e.target.value
+    if (_hour >= 24 || _hour <= 0) {
+      hour(0)
+      e.target.value = '00'
     } else {
       hour(_hour)
     }
@@ -102,6 +117,16 @@ function init ({hour, minutes, seconds, showtimer}) {
       minutes(_minutes)
     }
   }
+  // 分钟手动输入
+  this.blurMinutes = (e) => {
+    let _minutes = e.target.value
+    if (_minutes >= 60 || _minutes <= 0) {
+      minutes(0)
+      e.target.value = '00'
+    } else {
+      minutes(_minutes)
+    }
+  }
   this.nextseconds = () => {
     let _seconds = seconds() + 1
     if (_seconds >= 60) {
@@ -114,6 +139,16 @@ function init ({hour, minutes, seconds, showtimer}) {
     let _seconds = seconds() - 1
     if (_seconds <= 0) {
       seconds(59)
+    } else {
+      seconds(_seconds)
+    }
+  }
+  // 秒手动输入
+  this.blurSeconds = (e) => {
+    let _seconds = e.target.value
+    if (_seconds >= 60 || _seconds <= 0) {
+      seconds(0)
+      e.target.value = '00'
     } else {
       seconds(_seconds)
     }

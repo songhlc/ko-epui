@@ -1,5 +1,5 @@
-import {getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth} from '../util'
-/* global ko */
+import { getFirstDayOfMonth, getDayCountOfMonth, getWeekNumber, getStartDateOfMonth, setData } from '../util'
+var ko = window.ko
 const DAY_DURATION = 86400000 // 1天
 const clearHours = function (time) {
   const cloneDate = new Date(time)
@@ -11,8 +11,14 @@ function init (params) {
   let that = this
   this.month = params.month
   this.year = params.year
+  this.showYear = ko.computed(function () {
+    return this.year() + '年'
+  }.bind(this))
+  this.showMonth = ko.computed(function () {
+    return this.month() + '月'
+  }.bind(this))
   this.day = params.day
-  this.tableRows = ko.observableArray([ ko.observableArray([]), ko.observableArray([]), ko.observableArray([]), ko.observableArray([]), ko.observableArray([]), ko.observableArray([]) ])
+  this.tableRows = ko.observableArray([ko.observableArray([]), ko.observableArray([]), ko.observableArray([]), ko.observableArray([]), ko.observableArray([]), ko.observableArray([])])
   // todo
   this.firstDayOfWeek = ko.observable(7)
   // 开始日期
@@ -21,10 +27,8 @@ function init (params) {
   }, this)
   this.disabledDate = function (time) {
     if (params.minDate() && clearHours(time) <= clearHours(new Date(params.minDate()))) {
-      debugger
       return true
     } else if (params.maxDate() && clearHours(time) >= clearHours(new Date(params.maxDate()))) {
-      debugger
       return true
     } else {
       return false
@@ -62,15 +66,14 @@ function init (params) {
       }
     }
     // 切换到其他月份的时候
-    params.data((new Date(year, month - 1, day, params.hour(), params.minutes(), params.seconds())).Format(params.isTimer ? 'yyyy-MM-dd hh:mm:ss' : 'yyyy-MM-dd'))
+    setData((new Date(year, month - 1, day, params.hour(), params.minutes(), params.seconds()))._format(params.isTimer ? 'yyyy-MM-dd hh:mm:ss' : 'yyyy-MM-dd'), params.data, params.isNumbericValue)
   }
   // 判断是否当前天
   this.isSelectedDay = (cellType, cellDay) => {
     if (cellType === 'normal') {
       // fix ie and edge new date bug
-
       if (params.data()) {
-        var _date = new Date(params.data().replace(/-/g, '/'))
+        var _date = new Date((params.data() + '').replace(/-/g, '/'))
         if (cellDay === this.day() && this.month() === (_date.getMonth() + 1) && this.year() === (_date.getFullYear())) {
           return true
         }

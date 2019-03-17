@@ -1,4 +1,5 @@
-.day-header{
+@primary-color: #3ca7e3;
+.y-day-header{
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Chrome/Safari/Opera */
   -khtml-user-select: none; /* Konqueror */
@@ -7,10 +8,11 @@
   user-select: none;
   cursor: pointer;
 }
-.day-body {
+.y-day-body {
   padding: 5px;
   margin-top: 10px;
   width: 100%;
+  border: none;
   td{
     width: 24px;
     height: 24px;
@@ -24,11 +26,11 @@
     color: #e4e8f1;
   }
   td.curDay{
-    background-color: #1baede;
+    background-color: @primary-color;
     color: #FFF;
   }
   td.selectedDay{
-    background-color: #1baede;
+    background-color: @primary-color;
     color: #FFF;
   }
   td:hover{
@@ -38,13 +40,13 @@
     background-color: #e4e8f1;
   }
   td.selectedDay:hover{
-    background-color: #1baede;
+    background-color: @primary-color;
   }
   td.normal:hover{
     background-color: #e4e8f1;
   }
 }
-.day-header{
+.y-day-header{
   text-align: center;
   .lastyear,.lastmonth,.nextyear,.nextmonth{
     width: 10%;

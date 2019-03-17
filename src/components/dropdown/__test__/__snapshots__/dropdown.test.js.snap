@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`y-dropdown组件 快照 1`] = `
+<body>
+  <y-dropdown
+    params="width:300, isShow:isShow, isStopTransferDom: true"
+  >
+    <div
+      class="y-dropdown v-transfer-dom slideInUp"
+      data-bind="
+  transferdom: isTransferDom,
+  style: style,
+  event: {
+    mouseenter: onEnter,
+    mouseleave: onLeave
+  },
+  css: {
+    animated: animated,
+    slideInUp: isShow && !dropStyle,
+    slideOutUp: !isShow(),
+    hidden:!isShow()
+  }"
+      style="width: 300px; position: absolute;"
+    >
+      
+  
+      <!-- ko template: { nodes: $componentTemplateNodes } -->
+      <div
+        data-bind="foreach:$parent.dataList"
+      >
+        <div
+          class="mytestClass"
+          data-bind="text:$data.label"
+        >
+          label1
+        </div>
+        <div
+          class="mytestClass"
+          data-bind="text:$data.label"
+        >
+          label2
+        </div>
+      </div>
+      <!-- /ko -->
+      
+
+    </div>
+    
+
+  </y-dropdown>
+</body>
+`;

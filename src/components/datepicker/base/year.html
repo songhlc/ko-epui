@@ -1,5 +1,5 @@
-<div class="year-ctn">
-  <div class="year-header">
+<div class="y-year-ctn">
+  <div class="y-year-header">
     <div class="last10year" data-bind="click: last10year">&lt;&lt;</div>
     <div class="cur10year">
       <span data-bind="text:startyear"></span>
@@ -8,7 +8,7 @@
     </div>
     <div class="next10year" data-bind="click: next10year">&gt;&gt;</div>
   </div>
-  <table class="year-body">
+  <table class="y-year-body">
     <tr>
       <td class="available" data-bind="css:{curry:year() == startyear()+0}"><div class="cell" data-bind="text: startyear,click:function(){handleYearClick(0)}"></div></td>
       <td class="available" data-bind="css:{curry:year() == startyear()+1}"><div class="cell" data-bind="text: startyear() + 1,click:function(){handleYearClick(1)}"></div></td>

@@ -1,0 +1,16 @@
+<div class="y-dropdown" data-bind="
+  transferdom: isTransferDom,
+  style: style,
+  event: {
+    mouseenter: onEnter,
+    mouseleave: onLeave
+  },
+  css: {
+    animated: animated,
+    slideInUp: isShow && !dropStyle,
+    slideOutUp: !isShow(),
+    hidden:!isShow()
+  }">
+  <!-- ko template: { nodes: $componentTemplateNodes } -->
+  <!-- /ko -->
+</div>
