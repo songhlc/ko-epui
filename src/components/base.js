@@ -35,7 +35,7 @@ export function CustomIconCls (params, componentInfo, customTag) {
     if (params.vm.iconCls) {
       let dom = componentInfo.element.children[0]
       let element = dom.getElementsByTagName(customTag)[0]
-      let nodeCls = params.vm.iconCls.indexOf('uf') >= 0 ? (params.vm.iconCls + ' u-form-control-feedback') : params.vm.iconCls
+      let nodeCls = params.vm.iconCls.indexOf('ufo') >= 0 ? (params.vm.iconCls + ' u-form-control-feedback') : params.vm.iconCls
       element.attributes.class.nodeValue = nodeCls
     }
   }
